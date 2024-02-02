@@ -1,0 +1,26 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.Frame2{
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+}
+.banner{
+  max-width: 100%;
+  max-height: 90%;
+}
+.square {
+  border: 2px solid #333; /* Establece un borde sólido con un color resaltante */
+  padding: 15px; /* Añade espacio interno dentro del cuadrado */
+  margin: 10px; /* Define el margen entre los cuadrados */
+  text-align: center;
+}
+
+.square a {
+  display: block;
+  margin-bottom: 10px; /* Ajusta el espacio entre las líneas de texto */
+  color: #333; /* Color del texto */
+  text-decoration: none; /* Elimina la subrayado del enlace */
+}
