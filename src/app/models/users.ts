@@ -1,5 +1,8 @@
 export class Users{
     id:number=0
-    Usuario:String=""
-    PassWord:String=""
+    username:String=""
+    password:String=""
+    enabled:Boolean=false
+    nombres: String=""
+    apellidos: String=""
 }

@@ -4,28 +4,48 @@ import { CommonModule } from '@angular/common';
 import { ComponentsRoutingModule } from './components-routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarMostrarComponent } from './toolbar/toolbar-mostrar/toolbar-mostrar.component';
-import { LoginComponent } from './login/login.component';
-import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.component';
 import { IndexaComponent } from './indexa/indexa.component';
 import { IndexMostrarComponent } from './indexa/index-mostrar/index-mostrar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FooterMostrarComponent } from './footer/footer-mostrar/footer-mostrar.component';
+import {MatButtonModule} from '@angular/material/button';
+import { OperationComponent } from './operation/operation.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
   declarations: [
     ToolbarComponent,
     ToolbarMostrarComponent,
-    LoginComponent,
-    LoginMostrarComponent,
     IndexaComponent,
     IndexMostrarComponent,
     FooterComponent,
     FooterMostrarComponent,
+    OperationComponent,
+    
   ],
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule
   ]
 })
 export class ComponentsModule { }

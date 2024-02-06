@@ -13,24 +13,21 @@
   <section>
     <div class="formulario">
       <h1>Inicio de sesion</h1>
-      <form method="post">
 
         <div class="username">
-          <input type="text" required />
-          <label>Nombre de Usuario</label>
+          <input type="text" placeholder="Username" [(ngModel)]="username" />
         </div>
         <div class="username">
-          <input type="password" required />
-          <label>Contraseña</label>
+          <input type="password" placeholder="Password" [(ngModel)]="password" />
         </div>
         <div class="recordar">
           <a >  ¿Olvidó su contraseña?</a>
         </div>
-        <input class="login" type="submit" value="Login" />
+        <input class="login" type="submit" value="Login" (click)="login()">
+        <!-- (click)="login()" -->
         <div class="registro">
           <a >Crear cuenta nueva</a>
         </div>
-      </form>
     </div>
 
   </section>

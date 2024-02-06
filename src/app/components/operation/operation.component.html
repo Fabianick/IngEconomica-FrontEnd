@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <br />
+    <h2 style="text-align: center">Operacion</h2>
+    <mat-tab-group>
+      <mat-tab label="Ingreso"> Content 1 </mat-tab>
+      <mat-tab label="Retiro"> Content 2 </mat-tab>
+      <mat-tab label="Libre"> Content 3 </mat-tab>
+    </mat-tab-group>
+    <div style="text-align: right">
+      <button mat-raised-button color="primary" routerLink="/components/usuarios/nuevo">Nuevo </button>
+    </div>
+
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Codigo</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="tipo_deposito">
+        <th mat-header-cell *matHeaderCellDef>Tipo deposito</th>
+        <td mat-cell *matCellDef="let element">{{ element.tipo_deposito }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="monto">
+        <th mat-header-cell *matHeaderCellDef>Monto</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.monto }}
+        </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="tipo_tasa">
+        <th mat-header-cell *matHeaderCellDef>Tipo tasa </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.tipo_tasa }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="tipo_periodo">
+        <th mat-header-cell *matHeaderCellDef>Tipo periodo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.tipo_periodo }}
+        </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="periodo">
+        <th mat-header-cell *matHeaderCellDef>Periodo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.periodo }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="porcentaje_tasa">
+        <th mat-header-cell *matHeaderCellDef>Porcentaje tasa</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.porcentaje_tasa }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="capitalizacion">
+        <th mat-header-cell *matHeaderCellDef>capitalizacion</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.capitalizacion }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="users">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.users.username }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accion01">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn" [routerLink]="['ediciones', element.id]">
+            Actualizar
+          </button>
+        </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="accion02">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-mini-fab color="warn" aria-label="Example icon button with a home icon"
+            (click)="eliminar(element.id)">
+            <mat-icon>delete</mat-icon>
+            <!--Eliminar-->
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</body>
+
+</html>

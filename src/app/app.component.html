@@ -1,1 +1,42 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container style="height: 100%;">
+    <mat-sidenav mode="side" opened *ngIf="verificar()" class="custom-sidebar">
+  
+  
+      <!-- Contenido de tu barra lateral aquí -->
+  
+        <div class="sidebar-content">
+        <button mat-button *ngIf="role == 'ADMIN'" routerLink="components/operation"><mat-icon>person</mat-icon>Operaciones</button>
+        <button mat-button [matMenuTriggerFor]="menuSecundario" *ngIf="role == 'ADMIN'" ><mat-icon>face</mat-icon>Secundario</button>
+        <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()"><mat-icon>supervised_user_circle</mat-icon>Usuario</button>
+    </div>
+  
+    </mat-sidenav>
+  
+  
+        <!-- <mat-menu #menuOperation="matMenu">
+          <button mat-menu-item routerLink="components/operation" >Operacion</button> -->
+          <!-- <button mat-menu-item routerLink="components/usuarios">Listar</button> -->
+          <!-- Agrega más elementos de menú si es necesario -->
+        <!-- </mat-menu> -->
+  
+        <mat-menu #menuSecundario="matMenu">
+          <button mat-menu-item routerLink="components/secundario" >Registrar</button>
+          <!-- Agrega más elementos de menú si es necesario -->
+        </mat-menu>
+  
+        
+        <mat-menu #menuSalir="matMenu">
+          <button mat-menu-item routerLink="components/login" (click)="cerrar()">
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar sesión</span>
+  
+          </button>
+          <button mat-menu-item >Rol:
+            <span>{{role}}</span>
+          </button>
+          <!-- Agrega más elementos de menú si es necesario -->
+        </mat-menu>
+        <router-outlet></router-outlet>
+  </mat-sidenav-container>
+  
+  
