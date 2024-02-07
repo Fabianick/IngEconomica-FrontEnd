@@ -5,15 +5,25 @@
 
 }*/
 
-
-
 html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
   /*background-color: lightblue;*/
-  background-color: #242424;
-  font-family: "Times New Roman", Times, serif;
+  background-color: #7fb9ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.fondoTransparente {
+  margin-top: -8vh;
+  /*Imagen transparente de fondo*/
+  background-image: url("src\assets\loginImage.jpg");
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
 }
 
 .formulario {
@@ -37,8 +47,8 @@ html, body {
     padding:0 0 20px 0;
     border-bottom:1px solid silver;
     margin: 5%;
-    font-family: "Times New Roman", Times, serif;
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
 }
 
 formulario form{
@@ -124,7 +134,7 @@ form .username{
   width: 80%;
   height: 50px;
   border: 1px,solid;
-  background: black;
+  background: #467aff;
   border-radius: 30px;
   border:none;
   font-size: 18px;
@@ -139,9 +149,9 @@ form .username{
 
 .recordar a {
   margin: -5px 0 20px 5px;
-  color: #00cb3d;
+  color: #7fb9ff;
   cursor: pointer;
-  font-style: italic;
+  /*font-style: italic;*/
   text-decoration: underline;
   text-underline-offset: 5px;
   align-items: center;
@@ -152,9 +162,9 @@ form .username{
 
 .registro a {
   margin: 5px 5px 20px 5px;
-  color: #00cb3d;
+  color: #7fb9ff;
   cursor: pointer;
-  font-style: italic;
+  /*font-style: italic;*/
   text-decoration: underline;
   text-underline-offset: 5px;
   align-items: center;
