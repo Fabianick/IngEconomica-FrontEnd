@@ -9,7 +9,21 @@ html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
+  background-color: #7fb9ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.fondoTransparente {
+  margin-top: -8vh;
+  /*Imagen transparente de fondo*/
+  background-image: url("src\assets\loginImage.jpg");
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
 }
 
 .formulario {
@@ -32,6 +46,9 @@ html, body {
     text-align:center;
     padding:0 0 20px 0;
     border-bottom:1px solid silver;
+    margin: 5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
 }
 
 formulario form{
@@ -53,6 +70,8 @@ form .username{
     border:none;
     background:none;
     outline:none;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .username label{
@@ -61,7 +80,7 @@ form .username{
     left:4%;
     color:grey;
     transform:translateY(-50%);
-    font-size:16px;
+    font-size:20px;
     pointer-events:none;
     transition:.5s;
 }
@@ -93,12 +112,12 @@ form .username{
   width: 100%;
 }
 
-.login {
+.login-empty {
   margin: 1%;
   width: 80%;
   height: 50px;
   border: 1px,solid;
-  background: lightblue;
+  background: lightgray;
   border-radius: 30px;
   border:none;
   font-size: 18px;
@@ -110,12 +129,31 @@ form .username{
   margin-left:45px;
 }
 
+.login-full {
+  margin: 1%;
+  width: 80%;
+  height: 50px;
+  border: 1px,solid;
+  background: #467aff;
+  border-radius: 30px;
+  border:none;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  align-items:center;
+  position:center;
+  margin-left:45px;
+}
+
+
 .recordar a {
   margin: -5px 0 20px 5px;
-  color: blue;
+  color: #7fb9ff;
   cursor: pointer;
-  font-style: normal;
-  text-decoration: none;
+  /*font-style: italic;*/
+  text-decoration: underline;
+  text-underline-offset: 5px;
   align-items: center;
   position: center;
   text-align: center;
@@ -124,10 +162,11 @@ form .username{
 
 .registro a {
   margin: 5px 5px 20px 5px;
-  color: blue;
+  color: #7fb9ff;
   cursor: pointer;
-  font-style: normal;
-  text-decoration: none;
+  /*font-style: italic;*/
+  text-decoration: underline;
+  text-underline-offset: 5px;
   align-items: center;
   position: center;
   text-align: center;

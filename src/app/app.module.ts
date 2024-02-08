@@ -9,8 +9,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { LoginMostrarComponent } from './components/login/login-mostrar/login-mostrar.component';
-import { LoginComponent } from './components/login/login.component';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
@@ -27,8 +25,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    LoginMostrarComponent,
   ],
   imports: [
     BrowserModule,
