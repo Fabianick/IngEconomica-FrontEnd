@@ -17,7 +17,7 @@ export class AppComponent {
   }
   verificar() {
     this.role = this.loginService.showRole();
-    return this.loginService.verificar() && this.mostrarmenu();
+    return this.loginService.verificar();
   }
 
   validarRol() {
@@ -26,9 +26,5 @@ export class AppComponent {
     } else {
       return false;
     }
-  }
-
-  mostrarmenu() {
-    return window.location.pathname.startsWith('/components');
   }
 }
