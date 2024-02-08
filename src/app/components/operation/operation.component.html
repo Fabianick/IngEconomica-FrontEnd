@@ -9,12 +9,224 @@
 
 <body>
   <div class="container">
-    <br />
-    <h2 style="text-align: center">Operacion</h2>
     <mat-tab-group>
-      <mat-tab label="Ingreso"> Content 1 </mat-tab>
-      <mat-tab label="Retiro"> Content 2 </mat-tab>
-      <mat-tab label="Libre"> Content 3 </mat-tab>
+      <mat-tab label="Ingreso">
+
+        <div class="container text-center mt-3">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput placeholder="Monto S/" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Periodo</mat-label>
+                <mat-select [(value)]="selectedIngresoPeriodo">
+                  <mat-option >None</mat-option>
+                  <mat-option value="option1">Quincenal</mat-option>
+                  <mat-option value="option2">Bimestral</mat-option>
+                  <mat-option value="option3">Trimestral</mat-option>
+                  <mat-option value="option4">Semestral</mat-option>
+                  <mat-option value="option5">Personalizado</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" *ngIf="selectedIngresoPeriodo === 'option5'">
+                <mat-label>Dias Personalizados</mat-label>
+                <input matInput placeholder="Dias">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo porcentaje tasa</mat-label>
+                <input matInput placeholder="Tasa %" >
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <mat-label>Tipo de Tasa</mat-label>
+                <mat-select [(value)]="selectedIngresoTasa">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Tasa Efectiva</mat-option>
+                  <mat-option value="option2">Tasa Nominal</mat-option>
+                  <mat-option value="option2">Tasa Descontada</mat-option>
+
+                </mat-select>
+              </mat-form-field>
+
+
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Capitalización</mat-label>
+                <input matInput placeholder="Dias" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Fecha de Operación</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Retiro">
+
+        <div class="container text-center mt-3">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput placeholder="Monto S/" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Periodo</mat-label>
+                <mat-select [(value)]="selectedRetiroPeriodo">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Quincenal</mat-option>
+                  <mat-option value="option2">Bimestral</mat-option>
+                  <mat-option value="option3">Trimestral</mat-option>
+                  <mat-option value="option4">Semestral</mat-option>
+                  <mat-option value="option5">Personalizado</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" *ngIf="selectedRetiroPeriodo === 'option5'">
+                <mat-label>Dias Personalizados</mat-label>
+                <input matInput placeholder="Dias">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo porcentaje tasa</mat-label>
+                <input matInput placeholder="Tasa %" >
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <mat-label>Tipo de Tasa</mat-label>
+                <mat-select [(value)]="selectedRetiroTasa">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Tasa Efectiva</mat-option>
+                  <mat-option value="option2">Tasa Nominal</mat-option>
+                  <mat-option value="option2">Tasa Descontada</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Capitalización</mat-label>
+                <input matInput placeholder="Dias" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Fecha de Operación</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Libre">
+        <div class="container text-center mt-3">
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput placeholder="Monto S/" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Periodo</mat-label>
+                <mat-select [(value)]="selectedLibrePeriodo">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Quincenal</mat-option>
+                  <mat-option value="option2">Bimestral</mat-option>
+                  <mat-option value="option3">Trimestral</mat-option>
+                  <mat-option value="option4">Semestral</mat-option>
+                  <mat-option value="option5">Personalizado</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" *ngIf="selectedLibrePeriodo === 'option5'">
+                <mat-label>Dias Personalizados</mat-label>
+                <input matInput placeholder="Dias">
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Tipo porcentaje tasa</mat-label>
+                <input matInput placeholder="Tasa %" >
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <mat-form-field>
+                <mat-label>Tipo de Tasa</mat-label>
+                <mat-select [(value)]="selectedLibreTasa">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Tasa Efectiva</mat-option>
+                  <mat-option value="option2">Tasa Nominal</mat-option>
+                  <mat-option value="option2">Tasa Descontada</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="example-full-width">
+                <mat-label>Capitalización</mat-label>
+                <input matInput placeholder="Dias" >
+              </mat-form-field>
+            </div>
+            <div class="col">
+
+              <mat-form-field>
+                <mat-label>Fecha de Operación</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+
+            </div>
+          </div>
+        </div>
+
+      </mat-tab>
     </mat-tab-group>
     <div style="text-align: right">
       <button mat-raised-button color="primary" routerLink="/components/usuarios/nuevo">Nuevo </button>

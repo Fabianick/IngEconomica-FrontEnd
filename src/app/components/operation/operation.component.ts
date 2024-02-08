@@ -10,6 +10,16 @@ import { OperationService } from 'src/app/services/operation.service';
   styleUrls: ['./operation.component.css']
 })
 export class OperationComponent implements OnInit {
+  //Para el tab Ingreso
+  selectedIngresoPeriodo = 'option0';
+  selectedIngresoTasa = 'option0';
+  //Para el tab Retiro
+  selectedRetiroPeriodo = 'option0';
+  selectedRetiroTasa= 'option0';
+  //Para el tab Libre
+  selectedLibrePeriodo = 'option0';
+  selectedLibreTasa= 'option0';
+
   datasource: MatTableDataSource<Operation> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
@@ -25,7 +35,9 @@ export class OperationComponent implements OnInit {
     'accion01',
     'accion02',
   ];
-  constructor(private oS:OperationService){}
+  constructor(private oS:OperationService){
+
+  }
   ngOnInit(): void {
     this.oS.list().subscribe((data) => {
       this.datasource = new MatTableDataSource(data);
@@ -36,6 +48,8 @@ export class OperationComponent implements OnInit {
       this.datasource.paginator = this.paginator;
 
     });
+
+
   }
   eliminar(id: number) {
     this.oS.delete(id).subscribe((data) => {
