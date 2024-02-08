@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { OperationComponent } from './operation/operation.component';
-import { GuardService } from '../services/guard.service';
 
-const routes: Routes = [  
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'footer',
     component: FooterComponent
@@ -16,8 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'operation',
-    component: OperationComponent,
-    canActivate: [GuardService],
+    component: OperationComponent
   }
 ];
 
