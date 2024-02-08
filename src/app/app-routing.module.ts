@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexaComponent } from './components/indexa/indexa.component';
+import { LoginComponent } from './components/login/login.component';
+import { GuardService } from './services/guard.service';
 
 const routes: Routes = [
   {
@@ -13,9 +15,15 @@ const routes: Routes = [
     component: IndexaComponent,
   },
   {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
     path: 'components',
     loadChildren: () =>
       import('./components/components.module').then((m) => m.ComponentsModule),
+      canActivate: [GuardService],
+
   },
 ];
 

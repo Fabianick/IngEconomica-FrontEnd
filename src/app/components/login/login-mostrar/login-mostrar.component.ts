@@ -4,6 +4,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { JwtRequest } from 'src/app/models/jwtRequest';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ToolbarComponent } from '../../toolbar/toolbar.component';
+
+
 @Component({
   selector: 'app-login-mostrar',
   templateUrl: './login-mostrar.component.html',
