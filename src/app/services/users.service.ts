@@ -23,6 +23,11 @@ export class UsersService {
   setList(listanueva: Users[]){
     this.listacambio.next(listanueva);
   }
+  
+  getCurrentToken(): string | null {
+    let token: string | null = localStorage.getItem('token');
+    return token != null ?  token : null;
+  }
 
   getList(){
     return this.listacambio.asObservable();
