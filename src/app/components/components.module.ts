@@ -23,6 +23,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import { LoginComponent } from './login/login.component';
 import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterMostrarComponent } from './register/register-mostrar/register-mostrar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.compo
     OperationComponent,
     
     LoginComponent,
-    LoginMostrarComponent
+    LoginMostrarComponent,
+    RegisterComponent,
+    RegisterMostrarComponent
   ],
   imports: [
     CommonModule,
