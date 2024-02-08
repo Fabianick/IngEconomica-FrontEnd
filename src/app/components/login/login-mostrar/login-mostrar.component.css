@@ -64,15 +64,16 @@ form .username{
 }
 
 .username input{
-    width:100%;
+    width:92%;
     padding:0 5px;
     height:40px;
     font-size: 16px;
     border:none;
     background:none;
     outline:none;
-    margin-left: 2%;
-    margin-right: 2%;
+    /*margin-left: 4%;
+    margin-right: 4%;*/
+    margin:0 4%;
 }
 
 .username label{

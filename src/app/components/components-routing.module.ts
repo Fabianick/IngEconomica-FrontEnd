@@ -5,6 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { OperationComponent } from './operation/operation.component';
 
+import { RegisterComponent } from './register/register.component';
+
 const routes: Routes = [
   {
     path: 'login',
@@ -21,6 +23,11 @@ const routes: Routes = [
   {
     path: 'operation',
     component: OperationComponent
+  },
+
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 
