@@ -1,5 +1,5 @@
 import { Component , OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';8
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-indexa',
   templateUrl: './indexa.component.html',
