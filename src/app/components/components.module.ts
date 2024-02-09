@@ -29,6 +29,10 @@ import { RegisterMostrarComponent } from './register/register-mostrar/register-m
 
 @NgModule({
   declarations: [
+    LoginComponent,
+    LoginMostrarComponent,
+    RegisterComponent,
+    RegisterMostrarComponent,
     ToolbarComponent,
     ToolbarMostrarComponent,
    // IndexaComponent,
