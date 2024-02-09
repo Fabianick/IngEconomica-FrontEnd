@@ -22,6 +22,11 @@ import { MatInputModule } from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
+import { LoginComponent } from './login/login.component';
+import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterMostrarComponent } from './register/register-mostrar/register-mostrar.component';
+
 @NgModule({
   declarations: [
     ToolbarComponent,
@@ -32,7 +37,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     FooterComponent,
     FooterMostrarComponent,
     OperationComponent,
-    
+
   ],
   imports: [
     CommonModule,

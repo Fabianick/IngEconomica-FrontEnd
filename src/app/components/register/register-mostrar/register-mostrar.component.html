@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <app-toolbar></app-toolbar>
+  </header>
+
+  <div class="fondoTransparente"></div>
+
+  <section>
+    <div class="formulario">
+      <h1>Registrese</h1>
+        <div class="username">
+          <input type="text" placeholder="Nombre" [(ngModel)]="nombre" />
+        </div>
+
+        <div class="username">
+          <td>
+            <input type="text" placeholder="Apellido Paterno" [(ngModel)]="apellidoPaterno" />
+          </td>
+          <td>
+            <input type="text" placeholder="Apellido Materno" [(ngModel)]="apellidoMaterno" />
+          </td>
+        </div>
+
+        <div class="username">
+          <input type="text" placeholder="Username" [(ngModel)]="username" />
+        </div>
+        <div class="username">
+          <input type="email" placeholder="Email" [(ngModel)]="email" />
+        </div>
+        <div class="username">
+          <input type="password" placeholder="Password" [(ngModel)]="password" />
+        </div>
+        <input class="register-full" type="submit" value="Register" (click)="register()">
+        <!-- (click)="register()" -->
+        <div class="registro">
+          <a routerLink="/components/login">¿Ya tienes una cuenta? Inicie sesión</a>
+        </div>
+    </div>
+    
+    <!--img class="fondoTransparente" src="assets\loginImage.jpg" alt=""-->
+  </section>
+</body>
+</html>

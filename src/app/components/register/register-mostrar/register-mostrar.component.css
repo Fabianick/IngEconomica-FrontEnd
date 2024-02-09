@@ -1,0 +1,178 @@
+/*section {
+  background-color: lightblue;
+  height: 100%;
+  position:absolute;
+
+}*/
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /*background-color: lightblue;*/
+    background-color: #7fb9ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+  
+  .fondoTransparente {
+    margin-top: -56px;
+    /*Imagen transparente de fondo*/
+    background-image: url("src\assets\loginImage.jpg");
+    background-size: cover;
+    min-width: 100%;
+    /*min-height: 100%;*/
+    height: 100vh;
+    opacity: 0.5;
+    mix-blend-mode: multiply;
+    transform: scaleX(-1);
+  }
+  
+  .formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+  
+  
+  }
+  @media screen and (max-width: 600px) {
+    .formulario {
+      width: 350px;
+    }
+  }
+  .formulario h1{
+      text-align:center;
+      padding:0 0 20px 0;
+      border-bottom:1px solid silver;
+      margin: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bolder;
+  }
+  
+  formulario form{
+      padding:0 40px;
+      box-sizing:border-box;
+  }
+  
+  form .username{
+    position:relative;
+    border-bottom:2px solid #adadad;
+    margin:30px 0;
+  }
+
+.username input{
+    width:92%;
+    padding:0 5px;
+    height:40px;
+    font-size: 16px;
+    border:none;
+    background:none;
+    outline:none;
+    /*margin-left: 4%;
+    margin-right: 4%;*/
+    margin:0 4%;
+}
+
+.username td input{
+  width:84%;
+  padding:0 5px;
+  height:40px;
+  font-size: 16px;
+  border:none;
+  background:none;
+  outline:none;
+  /*margin-left: 4%;
+  margin-right: 4%;*/
+  margin:0 8%;
+}
+  
+  .username label{
+      position:absolute;
+      top:50%;
+      left:4%;
+      color:grey;
+      transform:translateY(-50%);
+      font-size:20px;
+      pointer-events:none;
+      transition:.5s;
+  }
+  
+  .username span::before{
+      content:'';
+      position:absolute;
+      top:40px;
+      left:0;
+      width:100%;
+      height:2px;
+      background:yellow;
+      transition:.5s;
+  }
+  
+  .username input:focus ~ label,
+  .username input:focus ~ label {
+    top: -5px;
+    color: black;
+  }
+  
+  
+  .username input:valid ~ label {
+    top: -5px;
+    color: black;
+  }
+  
+  .username input:valid ~ span::before {
+    width: 100%;
+  }
+  
+  .register-empty {
+    margin: 1%;
+    width: 80%;
+    height: 50px;
+    border: 1px,solid;
+    background: lightgray;
+    border-radius: 30px;
+    border:none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    align-items:center;
+    position:center;
+    margin-left:45px;
+  }
+  
+  .register-full {
+    margin: 1%;
+    width: 80%;
+    height: 50px;
+    border: 1px,solid;
+    background: #467aff;
+    border-radius: 30px;
+    border:none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    align-items:center;
+    position:center;
+    margin-left:45px;
+    /*margin-bottom: 20px;*/
+  }
+
+  .registro a {
+    margin: 5px 5px 20px 5px;
+    color: #7fb9ff;
+    cursor: pointer;
+    /*font-style: italic;*/
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    align-items: center;
+    position: center;
+    text-align: center;
+    display: block; /* Convierte el enlace en un bloque para poder aplicar márgenes y centrarlo */
+  }
+  
