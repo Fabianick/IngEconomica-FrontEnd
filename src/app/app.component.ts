@@ -27,7 +27,6 @@ export class AppComponent {
       return false;
     }
   }
-
   mostrarmenu() {
     return window.location.pathname.startsWith('/components');
   }

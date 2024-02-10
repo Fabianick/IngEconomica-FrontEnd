@@ -65,7 +65,6 @@ export class RegisterMostrarComponent  implements OnInit{
       } else {
         this.mensaje = 'Por favor complete todos los campos obligatorios.';
         this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
-
       }
      }
 

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== SWIPER CSS ===============-->
+
+    <!--=============== CSS ===============-->
+
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl4)">
+    <link rel="stylesheet" [href]="sanitizer.bypassSecurityTrustResourceUrl(cssUrl5)">
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <app-toolbar-mostrar></app-toolbar-mostrar>
+        <!--<nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="assets/img/logo.png" alt="" class="nav__logo-img">
+                    ¡Al Toque Cash!
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#celebrate" class="nav__link">Quienes Somos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#gift" class="nav__link">Desarrolladores</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#new" class="nav__link">Servicios</a>
+                    </li>
+                   <li class="nav__item">
+                        <a routerLink="/login" class="nav__link">Login</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <button mat-raised-button routerLink="/components/login">Login</button>
+                      </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <img src="assets/img/nav-light.png" alt="" class="nav__img">
+            </div>
+            <div class="nav__btns">
+               Theme change button
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                 Toggle button
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-grid-alt'></i>
+                </div>
+            </div>
+
+        </nav>
+      -->
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home" id="home">
+            <div class="home__container container grid">
+                <img src="assets/img/home_1.png" alt="" class="home__img">
+
+                <div class="home__data">
+                    <h1 class="home__title">¡Al toque Cash!<br> Tu guía para elegir los mejores ahorros!</h1>
+                    <p class="home__description">
+                        Bienvenido a nuestra app de gestión de ahorros,<br>fácil y completa para controlar tus finanzas eficientemente.                    </p>
+                    <a routerLink="/login" class="button">Comenzar</a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTENT ====================-->
+        <section class="giving section container">
+            <h2 class="section__title">
+                Objetivos de la aplicación
+            </h2>
+            <div class="giving__container grid">
+                <div class="giving__content">
+                    <img src="assets/img/giving1.png" alt="" class="giving__img">
+                    <h3 class="giving__title">Seguridad y confianza</h3>
+                    <p class="giving__description"> Tenemos un sistema de inicio de sesión seguro y confiable para proteger la información de los usuarios en nuestra base de datos.</p>
+                </div>
+
+                <div class="giving__content">
+                    <img src="assets/img/giving2.png" alt="" class="giving__img">
+                    <h3 class="giving__title">Calidad</h3>
+                    <p class="giving__description">La aplicacion es de manera intuitiva y confiable con una perspectiva financiera para el usuario.</p>
+                </div>
+
+                <div class="giving__content">
+                    <img src="assets/img/giving3.png" alt="" class="giving__img">
+                    <h3 class="giving__title">Mantenimiento</h3>
+                    <p class="giving__description">
+                        Mantener una base de datos actualizada con los detalles de los clientes y las operaciones realizadas, garantizando un seguimiento exhaustivo.
+                        </p>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== DESCRIPTION ====================-->
+        <section class="celebrate section container" id="celebrate">
+            <div class="celebrate__container grid">
+                <div class="celebrate__data">
+                    <h2 class="section__title celebrate__title">
+                        ¿Quienes<br> Somos?
+                    </h2>
+                    <p class="celebrate__description">
+
+                     Estamos enfocados en optimizar la gestion finaciera. A travez de nuestra aplicacion Al ToqueCash, usted podra tener diversios servicios,como el cambio de tasa y moneda, y herramientas para el control de tu cuenta de ahorros de forma segura y sencilla.
+                    </p>
+                    <a href="#" class="button">Saber Más</a>
+                </div>
+
+                <img src="assets/img/celebrate.png" alt="" class="celebrate__img">
+            </div>
+        </section>
+
+        <!--==================== INTEGRANTES ====================-->
+        <section class="gift section container" id="gift">
+            <h2 class="section__title">Integrantes</h2>
+
+            <div class="gift__container grid">
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Fabian Diaz</h3>
+                    <span class="gift__title">Integrante - 1</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Walter Delgado</h3>
+                    <span class="gift__title">Integrante - 2</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Diego Emilio</h3>
+                    <span class="gift__title">Integrante - 3</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Alex Yucra</h3>
+                    <span class="gift__title">Integrante - 4</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Anthony Nuñez</h3>
+                    <span class="gift__title">Integrante - 5</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Ariam Bartolo</h3>
+                    <span class="gift__title">Integrante - 6</span>
+                </article>
+
+                <article class="gift__card">
+                    <img src="assets/img/avatar.png" alt="" class="gift__img">
+                    <i class='bx bx-heart gift__icon'></i>
+
+                    <h3 class="gift__price">Juan Carrasco</h3>
+                    <span class="gift__title">Integrante - 7</span>
+                </article>
+            </div>
+        </section>
+
+        <!--==================== NEW TEACHERS====================-->
+        <section class="new section container" id="new">
+            <h2 class="section__title">Nuestros Servicios</h2>
+
+            <div class="new__container">
+                <div class="swiper new-swiper">
+                    <div class="swiper-wrapper">
+
+                        <article class="new__card swiper-slide">
+                            <div class="new__overlay"></div>
+
+                            <img src="assets/img/teacher.png" alt="" class="new__img">
+                            <h3 class="new__price">Cambio de tasa de interés</h3>
+                            <span class="new__title">Permite el cambio de tasa de interés efectiva o nominal</span>
+
+                            <button class="button new__button">
+                                <i class='bx bx-heart new__icon'></i>
+                            </button>
+                        </article>
+
+                        <article class="new__card swiper-slide">
+                            <div class="new__overlay"></div>
+
+                            <img src="assets/img/flujo_fondos.png" alt="" class="new__img">
+                            <h3 class="new__price">Cambio de flujo de fondos</h3>
+                            <span class="new__title">Permite llevar el saldo acumulado de la cuenta de ahorros así como cambios en el
+                                flujo de fondos (entradas o salidas de dinero a la cuenta).</span>
+
+                            <button class="button new__button">
+                                <i class='bx bx-heart new__icon'></i>
+                            </button>
+                        </article>
+
+                        <article class="new__card swiper-slide">
+                            <div class="new__overlay"></div>
+
+                            <img src="assets/img/intercambio.png" alt="" class="new__img">
+                            <h3 class="new__price">Cambio de moneda</h3>
+                            <span class="new__title">Permite definir el cambio de moneda de soles o dólares</span>
+
+                            <button class="button new__button">
+                                <i class='bx bx-heart new__icon'></i>
+                            </button>
+                        </article>
+
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== MESSAGE ====================-->
+        <section class="message section container">
+            <div class="message__container grid">
+                <form action="" class="message__form">
+                    <h2 class="message__title">Envíanos un <br> E-mail!</h2>
+                    <input type="email" placeholder="Escribe tu mensaje" class="message__input">
+                    <button class="button message__button">Enviar mensaje</button>
+                </form>
+
+                <img src="assets/img/message.png" alt="" class="message__img">
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">
+                    <img src="assets/img/logo.png" alt="" class="footer__logo-img">
+                    ¡Al Toque Cash!
+                </a>
+
+                <p class="footer__description">
+                    Seguridad y Confianza
+                </p>
+            </div>
+
+            <div>
+                <h3 class="footer__title">Nuestros Servicios</h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#" class="footer__link">Cambio de tasa de interés</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Cambio de flujo de fondos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Cambio de moneda</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="footer__title">Soporte</h3>
+
+                <ul class="footer__links">
+                    <li>
+                        <a href="#" class="footer__link">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Support center</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer__link">Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="footer__title">Disponible en</h3>
+
+                <div class="footer__aviables">
+                    <img src="assets/img/aviable1.png" alt="" class="footer__aviable-img">
+                    <img src="assets/img/aviable2.png" alt="" class="footer__aviable-img">
+                </div>
+            </div>
+
+            <img src="assets/img/footer1.png" alt="" class="footer__img1">
+            <img src="assets/img/footer2.png" alt="" class="footer__img2">
+        </div>
+
+        <span class="footer__copy">&#169; 2023 Company, AltoqueCash. All rigths reserved</span>
+    </footer>
+
+    <!--=============== SCROLL UP ===============-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+    </a>
+
+    <!--=============== SCROLL REVEAL ===============-->
+    <script src="/src/assets/js/scrollreveal.min/scrollreveal.min.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="/src/assets/js/swiper-bundle.min/swiper-bundle.min.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="/src/assets/js/main/main.js"></script>
+
+
+
+</body>
+
+</html>

@@ -35,6 +35,6 @@ constructor(private loginService: LoginService, private router: Router, private 
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
     });
-   }
+  }
 
 }

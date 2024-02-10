@@ -5,6 +5,7 @@ import { ComponentsRoutingModule } from './components-routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarMostrarComponent } from './toolbar/toolbar-mostrar/toolbar-mostrar.component';
 import { IndexaComponent } from './indexa/indexa.component';
+import { LandingComponent } from './landing/landing.component';
 import { IndexMostrarComponent } from './indexa/index-mostrar/index-mostrar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FooterMostrarComponent } from './footer/footer-mostrar/footer-mostrar.component';
@@ -23,19 +24,24 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 import { LoginComponent } from './login/login.component';
 import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterMostrarComponent } from './register/register-mostrar/register-mostrar.component';
 
 @NgModule({
   declarations: [
+    LoginComponent,
+    LoginMostrarComponent,
+    RegisterComponent,
+    RegisterMostrarComponent,
     ToolbarComponent,
     ToolbarMostrarComponent,
-    IndexaComponent,
+   // IndexaComponent,
+    LandingComponent,
     IndexMostrarComponent,
     FooterComponent,
     FooterMostrarComponent,
     OperationComponent,
-    
-    LoginComponent,
-    LoginMostrarComponent
+
   ],
   imports: [
     CommonModule,

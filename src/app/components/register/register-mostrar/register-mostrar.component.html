@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <app-toolbar></app-toolbar>
+  </header>
+
+  <div class="fondoTransparente"></div>
+
+  <section>
+    <div class="formulario">
+      <h1>Registrese</h1>
+      <form [formGroup]="form" id="register-form">
+        <div class="username">
+          <input type="text" placeholder="Nombre" formControlName="nombres"/>
+        </div>
+
+        <div class="username">
+          <td>
+            <input type="text" placeholder="Apellido Paterno" formControlName="apellidop"/>
+          </td>
+          <td>
+            <input type="text" placeholder="Apellido Materno" formControlName="apellidom"/>
+          </td>
+        </div>
+
+        <div class="username">
+          <input type="text" placeholder="Username" formControlName="username"/>
+        </div>
+        <div class="username">
+          <input type="email" placeholder="Email"/>
+        </div>
+        <div class="username">
+          <input type="password" placeholder="Password" formControlName="password"/>
+        </div>
+        <input class="register-full" type="submit" value="Register" (click)="register()">
+        <!-- (click)="register()" -->
+        <div class="registro">
+          <a routerLink="/login">¿Ya tienes una cuenta? Inicie sesión</a>
+        </div>
+      </form>
+    </div>
+    
+    <!--img class="fondoTransparente" src="assets\loginImage.jpg" alt=""-->
+  </section>
+</body>
+</html>
