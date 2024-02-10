@@ -23,7 +23,6 @@ export class OperationComponent implements OnInit {
   datasource: MatTableDataSource<Operation> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
-    'id',
     'tipo_deposito',
     'monto',
     'tipo_tasa',
@@ -31,6 +30,7 @@ export class OperationComponent implements OnInit {
     'periodo',
     'porcentaje_tasa',
     'capitalizacion',
+    'fecha_operacion',
     'users',
     'accion01',
     'accion02',

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" >
     <mat-tab-group>
       <mat-tab label="Ingreso">
 
@@ -237,12 +237,6 @@
                   The actual rendered columns are set as a property on the row definition" -->
 
       <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Codigo</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-      </ng-container>
-
-      <!-- Position Column -->
       <ng-container matColumnDef="tipo_deposito">
         <th mat-header-cell *matHeaderCellDef>Tipo deposito</th>
         <td mat-cell *matCellDef="let element">{{ element.tipo_deposito }}</td>
@@ -292,6 +286,14 @@
         <th mat-header-cell *matHeaderCellDef>capitalizacion</th>
         <td mat-cell *matCellDef="let element">
           {{ element.capitalizacion }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="fecha_operacion">
+        <th mat-header-cell *matHeaderCellDef>Fecha operacion</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fecha_operacion }}
         </td>
       </ng-container>
 

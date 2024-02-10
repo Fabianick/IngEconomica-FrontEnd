@@ -5,7 +5,7 @@
       <!-- Contenido de tu barra lateral aquí -->
   
         <div class="sidebar-content">
-        <button mat-button *ngIf="role == 'ADMIN'" routerLink="components/operation"><mat-icon>person</mat-icon>Operaciones</button>
+        <button mat-button routerLink="components/operation"><mat-icon>person</mat-icon>Operaciones</button>
         <button mat-button [matMenuTriggerFor]="menuSecundario" *ngIf="role == 'ADMIN'" ><mat-icon>face</mat-icon>Secundario</button>
         <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()"><mat-icon>supervised_user_circle</mat-icon>Usuario</button>
     </div>
@@ -26,7 +26,7 @@
   
         
         <mat-menu #menuSalir="matMenu">
-          <button mat-menu-item routerLink="components/login" (click)="cerrar()">
+          <button mat-menu-item routerLink="/login" (click)="cerrar()">
             <mat-icon>logout</mat-icon>
             <span>Cerrar sesión</span>
   
