@@ -36,10 +36,10 @@ export class OperationService {
     return this.listaCambio.asObservable();
   }
 
-  listId(id: number) {
+  listId(id: string) {
     let token = sessionStorage.getItem('token');
 
-    return this.http.get<Operation>(`${this.url}/${id}`,{
+    return this.http.get<Operation[]>(`${this.url}/${id}`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
@@ -62,7 +62,7 @@ export class OperationService {
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
-  } 
-    
+  }
+
 }
 
