@@ -30,7 +30,8 @@ constructor(private loginService: LoginService, private router: Router, private 
     request.password = this.password;
     this.loginService.login(request).subscribe((data: any) => {
       sessionStorage.setItem("token", data.jwttoken);
-      this.router.navigate(['components']);
+      this.router.navigate(['components',{username:this.username}]);
+      sessionStorage.setItem("username", this.username);
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
