@@ -46,7 +46,6 @@ export class OperationComponent implements OnInit {
     { value: 'Tasa Descontada', viewValue: 'Tasa Descontada' }
   ];
 
-  username:string;
 
   datasource: MatTableDataSource<Operation> = new MatTableDataSource();
 
