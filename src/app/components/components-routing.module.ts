@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { OperationComponent } from './operation/operation.component';
 
+import { RegisterComponent } from './register/register.component';
+
 const routes: Routes = [
-  
+  {
+    path: 'login',
+    component: LoginComponent
+  },
   {
     path: 'footer',
     component: FooterComponent
@@ -17,7 +23,12 @@ const routes: Routes = [
   {
     path: 'operation',
     component: OperationComponent
-  },  
+  },
+
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
 ];
 
 @NgModule({

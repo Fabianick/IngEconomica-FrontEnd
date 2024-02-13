@@ -22,8 +22,10 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-      <app-toolbar-mostrar></app-toolbar-mostrar>
-        <!--<nav class="nav container">
+     <app-toolbar-mostrar></app-toolbar-mostrar> <!-- --> 
+       
+      
+      <!--   <nav class="nav container">
             <a href="#" class="nav__logo">
                 <img src="assets/img/logo.png" alt="" class="nav__logo-img">
                     ¡Al Toque Cash!
@@ -69,6 +71,8 @@
 
         </nav>
       -->
+
+
     </header>
 
     <!--==================== MAIN ====================-->
@@ -88,7 +92,8 @@
         </section>
 
         <!--==================== CONTENT ====================-->
-        <section class="giving section container">
+        <div  id="seccion2"> 
+        <section class="giving section container" >
             <h2 class="section__title">
                 Objetivos de la aplicación
             </h2>
@@ -119,6 +124,8 @@
         <section class="celebrate section container" id="celebrate">
             <div class="celebrate__container grid">
                 <div class="celebrate__data">
+                    <br><br/>                   
+                    <br><br/>
                     <h2 class="section__title celebrate__title">
                         ¿Quienes<br> Somos?
                     </h2>
@@ -131,11 +138,13 @@
 
                 <img src="assets/img/celebrate.png" alt="" class="celebrate__img">
             </div>
+            <br><br/>    
         </section>
 
         <!--==================== INTEGRANTES ====================-->
         <section class="gift section container" id="gift">
-            <h2 class="section__title">Integrantes</h2>
+            <br><br/>
+            <h2 class="section__title">Desarrolladores</h2>
 
             <div class="gift__container grid">
                 <article class="gift__card">
@@ -202,9 +211,9 @@
 
             <div class="new__container">
                 <div class="swiper new-swiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(59px, 0px, 0px); transition-delay: 0ms;">
 
-                        <article class="new__card swiper-slide">
+                        <article class="new__card swiper-slide" style="margin-right: 80px;">
                             <div class="new__overlay"></div>
 
                             <img src="assets/img/teacher.png" alt="" class="new__img">
@@ -216,7 +225,7 @@
                             </button>
                         </article>
 
-                        <article class="new__card swiper-slide">
+                        <article class="new__card swiper-slide" style="margin-right: 80px;">
                             <div class="new__overlay"></div>
 
                             <img src="assets/img/flujo_fondos.png" alt="" class="new__img">
@@ -229,7 +238,7 @@
                             </button>
                         </article>
 
-                        <article class="new__card swiper-slide">
+                        <article class="new__card swiper-slide" style="margin-right: 80px;">
                             <div class="new__overlay"></div>
 
                             <img src="assets/img/intercambio.png" alt="" class="new__img">
@@ -261,6 +270,7 @@
                 <img src="assets/img/message.png" alt="" class="message__img">
             </div>
         </section>
+    </div>
     </main>
 
     <!--==================== FOOTER ====================-->

@@ -2,25 +2,24 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
-  
+
   }
-  
+
   .sidebar-content button {
     margin-bottom: 8px; /* Espaciado entre botones */
     color: rgb(0, 0, 0)
   }
-  
+
   .mat-sidenav{
     background-color: #FFD60A;
   }
-  
+
   .custom-sidebar {
     background-color: #24aad3;
   }
-  
+
   .custom-sidebar .sidebar-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  

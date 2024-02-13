@@ -14,7 +14,7 @@ html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
   }
-  
+
   .fondoTransparente {
     margin-top: -56px;
     /*Imagen transparente de fondo*/
@@ -27,7 +27,7 @@ html, body {
     mix-blend-mode: multiply;
     transform: scaleX(-1);
   }
-  
+
   .formulario {
     position: absolute;
     top: 50%;
@@ -36,8 +36,8 @@ html, body {
     width: 400px;
     background-color: white;
     border-radius: 10px;
-  
-  
+
+
   }
   @media screen and (max-width: 600px) {
     .formulario {
@@ -52,12 +52,12 @@ html, body {
       font-family: Arial, Helvetica, sans-serif;
       font-weight: bolder;
   }
-  
+
   formulario form{
       padding:0 40px;
       box-sizing:border-box;
   }
-  
+
   /* form .username{
     position:relative;
     border-bottom:2px solid #adadad;
@@ -89,7 +89,7 @@ html, body {
   margin-right: 4%;*/
   margin:0 8%;
 }
-  
+
   .username label{
       position:absolute;
       top:50%;
@@ -100,7 +100,7 @@ html, body {
       pointer-events:none;
       transition:.5s;
   }
-  
+
   .username span::before{
       content:'';
       position:absolute;
@@ -111,23 +111,23 @@ html, body {
       background:yellow;
       transition:.5s;
   }
-  
+
   .username input:focus ~ label,
   .username input:focus ~ label {
     top: -5px;
     color: black;
   }
-  
-  
+
+
   .username input:valid ~ label {
     top: -5px;
     color: black;
   }
-  
+
   .username input:valid ~ span::before {
     width: 100%;
   }
-  
+
   .register-empty {
     margin: 1%;
     width: 80%;
@@ -144,7 +144,7 @@ html, body {
     position:center;
     margin-left:45px;
   }
-  
+
   .register-full {
     margin: 1%;
     width: 80%;
@@ -175,4 +175,3 @@ html, body {
     text-align: center;
     display: block; /* Convierte el enlace en un bloque para poder aplicar márgenes y centrarlo */
   }
-  

@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit{
+
   constructor(public route:ActivatedRoute) { }
   ngOnInit(): void {}
 }

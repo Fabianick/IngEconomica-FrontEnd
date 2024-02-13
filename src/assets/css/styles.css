@@ -179,7 +179,7 @@ body.dark-theme {
 
 .main {
   overflow: hidden;
-  background-color: #6fcde0;
+  background-color: #9bd8e4;
 }
 
 .section {
@@ -321,6 +321,7 @@ body.dark-theme {
   font-size: var(--small-font-size);
   padding: 0 2rem;
   margin-bottom: var(--mb-2-5);
+  margin-top: 26px;
 }
 
 /*=============== BUTTONS ===============*/
@@ -362,6 +363,14 @@ body.dark-theme {
 
 .giving__description {
   font-size: var(--small-font-size);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #212121;
+ /* margin:12px -10 12px;*/
+     margin:20px 0 12px;
+     background-color: rgb(250 255 193 / 60%);
+  border-radius: 15px;
+  box-shadow: 8px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
 }
 
 .giving__img:hover {
@@ -473,6 +482,10 @@ body.dark-theme {
   font-weight: var(--font-medium);
 }
 
+span.new__title{
+  color: #363636;
+}
+
 .new__button {
   display: flex;
   padding: .5rem;
@@ -568,6 +581,7 @@ body.dark-theme {
 
 .footer__description {
   font-size: var(--small-font-size);
+  color: #434343;
 }
 
 .footer__logo, 
@@ -587,7 +601,7 @@ body.dark-theme {
 }
 
 .footer__link {
-  color: var(--text-color);
+  color: hsl(210deg 7.41% 28.59%);
   transition: .3s;
 }
 
@@ -605,7 +619,7 @@ body.dark-theme {
   margin: 3.5rem 0 1rem 0;
   text-align: center;
   font-size: var(--smaller-font-size);
-  color: #212121;
+  color: rgb(0 0 0 / 56%);
 }
 
 .footer__img1, 
@@ -692,7 +706,11 @@ footer.footer.section {
 @media screen and (min-width: 576px) {
   .home__description {
     padding: 0 8rem;
-    color: #212121;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    color: #fff2f2;
+    text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
   }
 
   .giving__container {
@@ -726,7 +744,7 @@ footer.footer.section {
     margin: 0;
   }
   .section {
-    padding: 6.5rem 0 2rem;
+    padding: 2rem 0 2rem;
   }
 
   .nav {
@@ -802,7 +820,7 @@ footer.footer.section {
     width: 500px;
   }
   .home__description {
-    padding-right: 8rem;
+    padding-right: 4rem;
   }
 
   .giving__container {
@@ -817,7 +835,8 @@ footer.footer.section {
     width: 450px;
   }
   .celebrate__description {
-    padding-right: 7rem;
+    padding-right: 6rem;
+    color: #212121;
   }
 
   .gift__container {
@@ -890,12 +909,26 @@ footer.footer.section {
   
   .scrollup {
     right: 3rem;
-  }
-}
 
-.home {
-  position: relative;
-  overflow: hidden;
-  background-image: url("/assets/img2.webp");
+  }
+
+  .home {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img2.webp");
+    width: 100%;
+    height: 668px;
+  } 
+  
+  #seccion2 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img/fondo3.avif");
+    width: 100%;
+    height: 75%;
+    background-size: contain; 
+    background-position-x: center;
+    background-position-y: center;
+  } 
 }
 
