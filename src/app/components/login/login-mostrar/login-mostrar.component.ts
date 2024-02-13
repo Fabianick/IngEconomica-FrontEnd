@@ -32,7 +32,6 @@ constructor(private loginService: LoginService, private router: Router, private 
       sessionStorage.setItem("token", data.jwttoken);
       this.router.navigate(['components',{username:this.username}]);
       sessionStorage.setItem("username", this.username);
-
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});

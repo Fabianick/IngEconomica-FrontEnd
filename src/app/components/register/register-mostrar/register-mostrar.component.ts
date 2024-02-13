@@ -4,9 +4,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { UsersService } from 'src/app/services/users.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Users } from 'src/app/models/users';
-import * as CryptoJs from 'crypto-js';
-import { Express } from 'express';
 import * as bcrypt from 'bcryptjs';
+
 @Component({
   selector: 'app-register-mostrar',
   templateUrl: './register-mostrar.component.html',
@@ -14,12 +13,11 @@ import * as bcrypt from 'bcryptjs';
 })
 export class RegisterMostrarComponent  implements OnInit{
 
-  claveEncriptada:string='';
 
   constructor(private uS: UsersService, private router: Router, private snackBar: MatSnackBar,private formBuilder: FormBuilder){}
     mensaje: string = ""
     usuario: Users = new Users();
-
+    claveEncriptada:string='';
     form: FormGroup = new FormGroup({});
     ngOnInit(): void {
       this.form = this.formBuilder.group({
@@ -32,15 +30,15 @@ export class RegisterMostrarComponent  implements OnInit{
         apellidom: [''],
       });
     }
-     encrypt(){
+
+    encrypt(){
       if(this.form.valid){
         const prueba2= bcrypt.hashSync(this.form.value.password, 4);
 
         this.claveEncriptada=prueba2.toString();
-        console.log(this.claveEncriptada);
-
       }
     }
+
     register() {
       this.encrypt();
       if (this.form.valid) {

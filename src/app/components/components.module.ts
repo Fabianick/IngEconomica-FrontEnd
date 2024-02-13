@@ -56,7 +56,7 @@ import { RegisterMostrarComponent } from './register/register-mostrar/register-m
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
   ]
 })
 export class ComponentsModule { }
