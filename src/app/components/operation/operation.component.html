@@ -50,7 +50,7 @@
             <div class="col">
               <mat-form-field>
                 <mat-label>Tipo de Tasa</mat-label>
-                <mat-select formControlName="tipo_tasa"> 
+                <mat-select formControlName="tipo_tasa">
                   <mat-option *ngFor="let p of tipotasa" [value]="p.value">
                     {{ p.viewValue }}
                   </mat-option>
@@ -221,7 +221,7 @@
 
     <p>{{ codeid }}</p>
 
-    
+
     <div class="botones">
       <button mat-raised-button color="primary" (click)="aceptar()">Nuevo </button>
       <button mat-raised-button color="warn" (click)="ngOnInit()">Limpiar</button>
@@ -238,7 +238,7 @@
         <th mat-header-cell *matHeaderCellDef>Id</th>
         <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
-      
+
       <!-- Position Column -->
       <ng-container matColumnDef="tipo_deposito">
         <th mat-header-cell *matHeaderCellDef>Tipo deposito</th>
