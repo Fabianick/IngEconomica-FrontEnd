@@ -52,7 +52,7 @@ export class OperationComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   displayedColumns: string[] = [
-    'id',
+    'idx',
     'tipo_deposito',
     'monto',
     'tipo_tasa',
