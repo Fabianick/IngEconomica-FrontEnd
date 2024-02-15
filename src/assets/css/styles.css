@@ -333,7 +333,7 @@ body.dark-theme {
   font-weight: var(--font-medium);
   border-radius: 3rem;
   transition: .3s;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   margin-top: 0px;
 }
 
