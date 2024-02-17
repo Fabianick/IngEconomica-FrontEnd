@@ -106,7 +106,7 @@ img.home__img {
   border-radius: 15px;
   border: 5px solid #d0d031;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7);
-  margin-right: 65px;
+  margin-right: 0px;
 }
 
 
@@ -175,6 +175,11 @@ body.dark-theme {
 
 .grid {
   display: grid;
+  /*justify-items: center;*/
+}
+
+.new__container.grid{
+  justify-items: center;
 }
 
 .main {
@@ -182,9 +187,53 @@ body.dark-theme {
   background-color: #9bd8e4;
 }
 
-.section {
-  padding: 4.5rem 0 1rem;
+section.giving.section.container{
+  margin-left: auto;
 }
+
+section#celebrate{
+  margin-left: auto;
+}
+
+section#gift{
+  margin-left: auto;
+}
+
+.section {
+  padding: 1rem 0 1rem;
+}
+
+section#new{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.message.section.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+  
+.home {
+  position: relative;
+  overflow: hidden;
+  background-image: url("/assets/img2.webp");
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+} 
+
+#seccion2 {
+  position: relative;
+  overflow: hidden;
+  background-image: url("/assets/img/fondo3.avif");
+  width: 100%;
+  height: 75%;
+  background-size: cover; 
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-position-x: center;
+  background-position-y: center;
+} 
 
 .section__title {
   font-size: var(--h2-font-size);
@@ -192,6 +241,9 @@ body.dark-theme {
   text-align: center;
 }
 
+.navbar-nav .nav-link.active, .px-3, .navbar-nav .nav-link.show{
+  text-align: center;
+}
 /*=============== HEADER ===============*/
 .header {
   width: 100%;
@@ -234,7 +286,7 @@ body.dark-theme {
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 828px) {
   .nav__menu {
     position: fixed;
     background-color: var(--body-color);
@@ -246,6 +298,18 @@ body.dark-theme {
     box-shadow: 0 1px 4px hsla(0, 4%, 15%, .1);
     transition: .4s;
   }
+
+  /*.swiper-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    flex-direction: column;
+    align-items: center;
+  }*/
 }
 
 .nav__img {
@@ -300,6 +364,8 @@ body.dark-theme {
 .home__container {
   padding-top: 1.5rem;
   row-gap: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .home__img {
@@ -322,6 +388,9 @@ body.dark-theme {
   padding: 0 2rem;
   margin-bottom: var(--mb-2-5);
   margin-top: 26px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #fff2f2;
+  text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
 }
 
 /*=============== BUTTONS ===============*/
@@ -343,7 +412,8 @@ body.dark-theme {
 
 /*=============== GIVING ===============*/
 .giving__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 0.5fr);
+  justify-content: center;
   gap: 2.5rem 1.5rem;
 }
 
@@ -392,6 +462,8 @@ body.dark-theme {
 
 .celebrate__description {
   margin-bottom: var(--mb-2-5);
+  margin-left: 9%;
+  margin-right: 10%;
 }
 
 .celebrate__img {
@@ -401,7 +473,8 @@ body.dark-theme {
 
 /*=============== GIFT ===============*/
 .gift__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 180px);
+  justify-content: center;
   gap: 1.5rem;
 }
 
@@ -449,7 +522,7 @@ body.dark-theme {
   width: 230px;
   background-color: var(--container-color);
   box-shadow: 0 4px 16px hsla(355, 25%, 15%, .1);
-  padding: 1rem 1rem 1.5rem;
+  padding: 1rem 1rem 2.5rem;
   border-radius: .75rem;
   text-align: center;
   margin-bottom: 4rem;
@@ -518,6 +591,8 @@ span.new__title{
   background-color: var(--first-color);
   padding: 2.5rem 1.5rem 2.5rem;
   border-radius: 1.25rem;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .message__form {
@@ -630,12 +705,14 @@ span.new__title{
 
 .footer__img1 {
   top: 25%;
-  right: 2rem;
+  right: 15%;
+  left: 55%;
 }
 
 .footer__img2 {
   top: 75%;
-  right: -4rem;
+  right: 15%;
+  left: 55%;
 }
 
 footer.footer.section {
@@ -686,10 +763,14 @@ footer.footer.section {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 455px) {
   .container {
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
+  }
+
+  .home__container.container.grid{
+    margin-left: auto;
   }
 
   .giving__container {
@@ -697,7 +778,7 @@ footer.footer.section {
   }
 
   .gift__container {
-    grid-template-columns: 150px;
+    grid-template-columns: 190px;
     justify-content: center;
   }
 }
@@ -708,25 +789,64 @@ footer.footer.section {
     padding: 0 8rem;
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: justify;
+    text-align: center;
     color: #fff2f2;
     text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
   }
+  
+  .home {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img2.webp");
+    width: 100%;
+    height: 550px;
+    background-size: cover;
+  } 
+
+  #seccion2 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img/fondo3.avif");
+    width: 100%;
+    height: 75%;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+  } 
+
+  .new__container {
+    padding-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr;*/
+    align-items: start;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
 
   .giving__container {
-    grid-template-columns: repeat(2, 142px);
+    grid-template-columns: repeat(3, 142px);
     justify-content: center;
     gap: 2.5rem 3.5rem;
   }
 
   .celebrate__description {
-    padding: 0 4rem;
+    padding: 0 8rem;
+    /*margin-left: 8%;
+    margin-right: 10%;*/
   }
 
   .gift__container {
     grid-template-columns: repeat(2, 180px);
     justify-content: center;
     gap: 2rem;
+  }
+  .message__container {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .message__input,
@@ -735,16 +855,55 @@ footer.footer.section {
   }
 
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 210px);
   }
+  .footer__img1 {
+    top: 10%;
+    right: 10%;
+    left: 75%;
+  }
+  .footer__img2 {
+    top: 65%;
+    right: 10%;
+    left: 75%;
+  }
+
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 828px) {
   body {
     margin: 0;
   }
+
+  .home {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img2.webp");
+    width: 100%;
+    height: 580px;
+    background-size: cover;
+  } 
+
+  #seccion2 {
+    position: relative;
+    overflow: hidden;
+    background-image: url("/assets/img/fondo3.avif");
+    width: 100%;
+    height: 75%;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position-x: center;
+    background-position-y: center;
+  } 
+
   .section {
     padding: 2rem 0 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section#new{
+    margin-left: auto;
   }
 
   .nav {
@@ -767,20 +926,40 @@ footer.footer.section {
     box-shadow: none;
   }
 
+  .new__container {
+    padding-top: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
   .home__container,
-  .celebrate__container,
   .message__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    /*margin-left: 10%;*/
+    margin-right: 10%;
   }
+
+  .celebrate__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
   .home__container {
     padding-top: 8rem;
+    margin-left: auto;
   }
   .home__data {
     text-align: initial;
+    margin-right: 10%;
   }
   .home__description {
     padding: 0;
+    text-align: justify;
   }
 
   .giving__container {
@@ -794,15 +973,25 @@ footer.footer.section {
   }
   .celebrate__description {
     padding: 0;
+    margin-left: auto;
   }
 
   .gift__container {
-    grid-template-columns: repeat(4, 200px);
+    grid-template-columns: repeat(3, 200px);
     gap: 2.5rem;
   }
 
   .footer__container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .footer__img1 {
+    top: 79%;
+    left: 0;
+  }
+  .footer__img2 {
+    top: 96%;
+    /*right: 0rem;*/
+    left: auto;
   }
 }
 
@@ -821,6 +1010,7 @@ footer.footer.section {
   }
   .home__description {
     padding-right: 4rem;
+    text-align: justify;
   }
 
   .giving__container {
@@ -837,10 +1027,13 @@ footer.footer.section {
   .celebrate__description {
     padding-right: 6rem;
     color: #212121;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .gift__container {
     padding-top: 2rem;
+    grid-template-columns: repeat(4, 200px);
   }
   .gift__card {
     padding: 2rem 1.5rem 1.5rem;
@@ -853,8 +1046,13 @@ footer.footer.section {
     font-size: var(--small-font-size);
   }
 
+
   .new__container {
-    padding-top: 2rem;
+    padding-top: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    margin-left: 2%;
+    margin-right: 2%;
   }
   .new__card {
     margin-bottom: 5rem;
@@ -868,6 +1066,8 @@ footer.footer.section {
     grid-template-columns: repeat(2, max-content);
     column-gap: 4rem;
     justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .message__form {
@@ -905,6 +1105,7 @@ footer.footer.section {
   .footer__img2 {
     top: 96%;
     right: 0rem;
+    left: auto;
   }
   
   .scrollup {
@@ -918,6 +1119,7 @@ footer.footer.section {
     background-image: url("/assets/img2.webp");
     width: 100%;
     height: 668px;
+    background-size: cover;
   } 
   
   #seccion2 {
@@ -926,7 +1128,8 @@ footer.footer.section {
     background-image: url("/assets/img/fondo3.avif");
     width: 100%;
     height: 75%;
-    background-size: contain; 
+    background-size: cover; 
+    background-attachment: fixed;
     background-position-x: center;
     background-position-y: center;
   } 
