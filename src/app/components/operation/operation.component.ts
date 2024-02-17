@@ -33,10 +33,10 @@ export class OperationComponent implements OnInit {
 
   tipoperiodo: { value: number; viewValue: string }[] = [
     { value: 0, viewValue: 'None' },
-    { value: 1, viewValue: 'Quincenal' },
-    { value: 2, viewValue: 'Bimestral' },
-    { value: 3, viewValue: 'Trimestral' },
-    { value: 4, viewValue: 'Semestral' },
+    { value: 15, viewValue: 'Quincenal' },
+    { value: 60, viewValue: 'Bimestral' },
+    { value: 90, viewValue: 'Trimestral' },
+    { value: 180, viewValue: 'Semestral' },
     { value: 5, viewValue: 'Personalizado' },
   ];
 
@@ -97,7 +97,8 @@ export class OperationComponent implements OnInit {
       periodo: [''],
       porcentaje_tasa: [''],
       capitalizacion: [''],
-      fecha_operacion: ['']
+      fecha_operacion: [''],
+      diasPersonalizados:[''],
     });
 
     this.formRetiro = this.formBuilder.group({
@@ -109,7 +110,8 @@ export class OperationComponent implements OnInit {
       periodo: [''],
       porcentaje_tasa: [''],
       capitalizacion: [''],
-      fecha_operacion: ['']
+      fecha_operacion: [''],
+      diasPersonalizados:[''],
     });
 
     this.formLibre = this.formBuilder.group({
@@ -121,7 +123,8 @@ export class OperationComponent implements OnInit {
       periodo: [''],
       porcentaje_tasa: [''],
       capitalizacion: [''],
-      fecha_operacion: ['']
+      fecha_operacion: [''],
+      diasPersonalizados:[''],
     });
 
 
@@ -153,12 +156,16 @@ export class OperationComponent implements OnInit {
         this.operation.tipo_periodo = this.formIngreso.value.tipo_periodo;
         this.operation.monto = this.formIngreso.value.monto;
         this.operation.tipo_tasa = this.formIngreso.value.tipo_tasa;
-        this.operation.periodo = this.formIngreso.value.periodo;
         this.operation.porcentaje_tasa = this.formIngreso.value.porcentaje_tasa;
         this.operation.capitalizacion = this.formIngreso.value.capitalizacion;
         this.operation.fecha_operacion = this.formIngreso.value.fecha_operacion;
         this.operation.tipo_deposito='Ingreso';
         this.operation.users.id = this.idguard;
+        if (this.formIngreso.value.periodo === 5) {
+          this.operation.periodo = this.formIngreso.value.diasPersonalizados;
+        } else {
+          this.operation.periodo = this.formIngreso.value.periodo;
+        }
 
         if (this.edicion) {
           this.oS.update(this.operation).subscribe(() => {
@@ -177,12 +184,16 @@ export class OperationComponent implements OnInit {
         this.operation.tipo_periodo = this.formRetiro.value.tipo_periodo;
         this.operation.monto = this.formRetiro.value.monto;
         this.operation.tipo_tasa = this.formRetiro.value.tipo_tasa;
-        this.operation.periodo = this.formRetiro.value.periodo;
         this.operation.porcentaje_tasa = this.formRetiro.value.porcentaje_tasa;
         this.operation.capitalizacion = this.formRetiro.value.capitalizacion;
         this.operation.fecha_operacion = this.formRetiro.value.fecha_operacion;
         this.operation.tipo_deposito='Retiro';
         this.operation.users.id = this.idguard;
+        if (this.formRetiro.value.periodo === 5) {
+          this.operation.periodo = this.formRetiro.value.diasPersonalizados;
+        } else {
+          this.operation.periodo = this.formRetiro.value.periodo;
+        }
         if (this.edicion) {
           this.oS.update(this.operation).subscribe(() => {
             this.ngOnInit();
@@ -200,12 +211,16 @@ export class OperationComponent implements OnInit {
         this.operation.tipo_periodo = this.formLibre.value.tipo_periodo;
         this.operation.monto = this.formLibre.value.monto;
         this.operation.tipo_tasa = this.formLibre.value.tipo_tasa;
-        this.operation.periodo = this.formLibre.value.periodo;
         this.operation.porcentaje_tasa = this.formLibre.value.porcentaje_tasa;
         this.operation.capitalizacion = this.formLibre.value.capitalizacion;
         this.operation.fecha_operacion = this.formLibre.value.fecha_operacion;
         this.operation.tipo_deposito='Libre';
         this.operation.users.id = this.idguard;
+        if (this.formLibre.value.periodo === 5) {
+          this.operation.periodo = this.formLibre.value.diasPersonalizados;
+        } else {
+          this.operation.periodo = this.formLibre.value.periodo;
+        }
         if (this.edicion) {
           this.oS.update(this.operation).subscribe(() => {
             this.ngOnInit();
@@ -228,17 +243,22 @@ export class OperationComponent implements OnInit {
     init(id: number) {
         this.oS.listId(id).subscribe((data) => {
           let fechaFormateada = moment(data.fecha_operacion).toDate();
-          if(data.tipo_deposito==='Ingreso'){
+          let periodoValue = data.periodo;
+              if (!this.tipoperiodo.some(p => p.value === data.periodo)) {
+                periodoValue = 5;
+              }
+          if(data.tipo_deposito==='Ingreso'){            
             this.formIngreso = new FormGroup({
               id: new FormControl(data.id),
               tipo_deposito: new FormControl(data.tipo_deposito),
               monto: new FormControl(data.monto),
               tipo_tasa: new FormControl(data.tipo_tasa),
               tipo_periodo: new FormControl(data.tipo_periodo),
-              periodo: new FormControl(data.periodo),
+              periodo: new FormControl(periodoValue),
               porcentaje_tasa: new FormControl(data.porcentaje_tasa),
               capitalizacion: new FormControl(data.capitalizacion),
-              fecha_operacion: new FormControl(fechaFormateada)
+              fecha_operacion: new FormControl(fechaFormateada),
+              diasPersonalizados: new FormControl(data.periodo)
             });
             this.demo1TabIndex = 0;
             this.codeid=id;
@@ -250,10 +270,11 @@ export class OperationComponent implements OnInit {
               monto: new FormControl(data.monto),
               tipo_tasa: new FormControl(data.tipo_tasa),
               tipo_periodo: new FormControl(data.tipo_periodo),
-              periodo: new FormControl(data.periodo),
+              periodo: new FormControl(periodoValue),
               porcentaje_tasa: new FormControl(data.porcentaje_tasa),
               capitalizacion: new FormControl(data.capitalizacion),
-              fecha_operacion: new FormControl(fechaFormateada)
+              fecha_operacion: new FormControl(fechaFormateada),
+              diasPersonalizados: new FormControl(data.periodo)
             });
             this.demo1TabIndex = 1;
             this.codeid=id;
@@ -265,10 +286,11 @@ export class OperationComponent implements OnInit {
               monto: new FormControl(data.monto),
               tipo_tasa: new FormControl(data.tipo_tasa),
               tipo_periodo: new FormControl(data.tipo_periodo),
-              periodo: new FormControl(data.periodo),
+              periodo: new FormControl(periodoValue),
               porcentaje_tasa: new FormControl(data.porcentaje_tasa),
               capitalizacion: new FormControl(data.capitalizacion),
-              fecha_operacion: new FormControl(fechaFormateada)
+              fecha_operacion: new FormControl(fechaFormateada),
+              diasPersonalizados: new FormControl(data.periodo)
             });
             this.demo1TabIndex = 2;
             this.codeid=id;
