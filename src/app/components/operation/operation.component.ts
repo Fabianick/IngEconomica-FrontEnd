@@ -302,5 +302,67 @@ export class OperationComponent implements OnInit {
 
     }
 
+    nominalStock(C: number, S: number, P: number, T: number, cap: number, t: number){
+      let n = t/cap;
+      let m = P/cap;
+      let _S = (S*(Math.pow((1+(T/m)),n)))+C;
+      return _S;
+    }
+    efectiveStock(C: number, S: number, P: number, T: number, t: number){
+      let _S = (S*(Math.pow((1+T),t/P)))+C
+      return _S;
+    }
+    discountedStock(C: number, S: number, P: number, T: number, t: number){
+      let _T = T/(1-T);
+      return this.efectiveStock(C, S, P, _T, t);
+    }
+    gettingAllOperations(){
+      let operations = this.datasource.data
+      return this.calculateStock(0, operations.length, 0, operations);
+    }
+    dayDiferenceCalculator(date1:Date, date2:Date){
+      let tD = Math.abs(new Date(date2).getTime() - new Date(date1).getTime());
+      let dD = tD / (1000 * 60 * 60 * 24); 
+      return dD;
+    }
+    calculateStock(i: number, size:number, stock: number, operations: Operation[]){//}: number{
+      if (i == 0) {
+        stock = operations[i].monto;
+      }
+      else{
+        let op_actual = operations[i];
+        let op_anterior = operations[i - 1];
+        let tiempo = this.dayDiferenceCalculator(op_actual.fecha_operacion, op_anterior.fecha_operacion)
+        switch (op_anterior.tipo_tasa) {
+          case 'Tasa Nominal':
+            stock = this.nominalStock(
+              op_actual.monto, stock, op_anterior.periodo, op_anterior.porcentaje_tasa/100, op_anterior.capitalizacion, tiempo
+              )
+            break;
+          case 'Tasa Efectiva':
+            stock = this.efectiveStock(
+              op_actual.monto, stock, op_anterior.periodo, op_anterior.porcentaje_tasa/100, tiempo
+              )
+            break;
+          case 'Tasa Descontada':
+            stock = this.discountedStock(
+              op_actual.monto, stock, op_anterior.periodo, op_anterior.porcentaje_tasa, tiempo
+              )
+            break;
+          default:
+            break;
+        }
+      }
+      i++;
+      console.log(stock);
+      if (i >= size) {
+        //return stock;
+      }
+      else{
+        //return this.calculateStock(i,size,stock,operations);
+        this.calculateStock(i,size,stock,operations);
+      }
+    }
+
 
 }
