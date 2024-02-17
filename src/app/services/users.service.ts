@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Users } from '../models/users';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 const base_url=environment.base
 
 @Injectable({
@@ -23,7 +23,7 @@ export class UsersService {
   setList(listanueva: Users[]){
     this.listacambio.next(listanueva);
   }
-  
+
   getCurrentToken(): string | null {
     let token: string | null = localStorage.getItem('token');
     return token != null ?  token : null;
