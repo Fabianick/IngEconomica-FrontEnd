@@ -36,7 +36,7 @@ constructor(private loginService: LoginService, private router: Router, private 
       }, error => {
         this.mensaje = "Credenciales incorrectas!!!"
         this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
-      });
+      }); 
     }
     else{
       this.mensaje = "Complete las credenciales!!!"
