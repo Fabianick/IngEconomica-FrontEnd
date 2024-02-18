@@ -18,10 +18,10 @@
       <h1>Inicio de sesion</h1>
 
         <div class="username">
-          <input type="text" placeholder="Username" [(ngModel)]="username" />
+          <input type="text" placeholder="Username" [(ngModel)]="username" (keydown.enter)="login()"/>
         </div>
         <div class="username">
-          <input type="password" placeholder="Password" [(ngModel)]="password" />
+          <input type="password" placeholder="Password" [(ngModel)]="password" (keydown.enter)="login()"/>
         </div>
         <div class="recordar">
           <a >  ¿Olvidó su contraseña?</a>

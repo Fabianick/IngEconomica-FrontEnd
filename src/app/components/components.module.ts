@@ -20,12 +20,13 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { LoginComponent } from './login/login.component';
 import { LoginMostrarComponent } from './login/login-mostrar/login-mostrar.component';
 import { RegisterComponent } from './register/register.component';
 import { RegisterMostrarComponent } from './register/register-mostrar/register-mostrar.component';
+import { DialogComponent } from './operation/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RegisterMostrarComponent } from './register/register-mostrar/register-m
     FooterComponent,
     FooterMostrarComponent,
     OperationComponent,
+    DialogComponent,
 
   ],
   imports: [
@@ -57,6 +59,7 @@ import { RegisterMostrarComponent } from './register/register-mostrar/register-m
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
+    MatDialogModule
   ]
 })
 export class ComponentsModule { }

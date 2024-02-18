@@ -28,14 +28,20 @@ constructor(private loginService: LoginService, private router: Router, private 
     let request = new JwtRequest();
     request.username = this.username;
     request.password = this.password;
-    this.loginService.login(request).subscribe((data: any) => {
-      sessionStorage.setItem("token", data.jwttoken);
-      this.router.navigate(['components',{username:this.username}]);
-      sessionStorage.setItem("username", this.username);
-    }, error => {
-      this.mensaje = "Credenciales incorrectas!!!"
+    if (request.username && request.username.trim() !== '' && request.password && request.password.trim() !== '') {
+      this.loginService.login(request).subscribe((data: any) => {
+        sessionStorage.setItem("token", data.jwttoken);
+        this.router.navigate(['components/operation',{username:this.username}]);
+        sessionStorage.setItem("username", this.username);
+      }, error => {
+        this.mensaje = "Credenciales incorrectas!!!"
+        this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
+      }); 
+    }
+    else{
+      this.mensaje = "Complete las credenciales!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
-    });
+    }
   }
 
 }
