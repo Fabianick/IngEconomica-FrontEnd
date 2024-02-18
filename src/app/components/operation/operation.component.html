@@ -8,225 +8,244 @@
 </head>
 
 <body>
-  <div class="container">
-    <mat-tab-group>
-      <mat-tab label="Ingreso">
+  <div class="container" style="text-align: center">
+    <mat-tab-group [(selectedIndex)]="demo1TabIndex">
+      <mat-tab label="Ingreso/Deposito">
+        <form [formGroup]="formIngreso" class="example-form">
+          <div class="container text-center mt-3">
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Monto</mat-label>
+                  <input matInput placeholder="Monto S/" formControlName="monto" (keypress)="onKeyPress($event)">
+                </mat-form-field>
+              </div>
+              <div class="col">
 
-        <div class="container text-center mt-3">
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Monto</mat-label>
-                <input matInput placeholder="Monto S/" >
-              </mat-form-field>
-            </div>
-            <div class="col">
+                <mat-form-field>
+                  <mat-label>Periodo</mat-label>
+                  <mat-select formControlName="periodo">
+                    <mat-option *ngFor="let p of tipoperiodo" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
 
-              <mat-form-field>
-                <mat-label>Periodo</mat-label>
-                <mat-select [(value)]="selectedIngresoPeriodo">
-                  <mat-option >None</mat-option>
-                  <mat-option value="option1">Quincenal</mat-option>
-                  <mat-option value="option2">Bimestral</mat-option>
-                  <mat-option value="option3">Trimestral</mat-option>
-                  <mat-option value="option4">Semestral</mat-option>
-                  <mat-option value="option5">Personalizado</mat-option>
-                </mat-select>
-              </mat-form-field>
-
-              <mat-form-field class="example-full-width" *ngIf="selectedIngresoPeriodo === 'option5'">
-                <mat-label>Dias Personalizados</mat-label>
-                <input matInput placeholder="Dias">
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Tipo porcentaje tasa</mat-label>
-                <input matInput placeholder="Tasa %" >
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
-        <div class="container text-center">
-          <div class="row">
-            <div class="col">
-              <mat-form-field>
-                <mat-label>Tipo de Tasa</mat-label>
-                <mat-select [(value)]="selectedIngresoTasa">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Tasa Efectiva</mat-option>
-                  <mat-option value="option2">Tasa Nominal</mat-option>
-                  <mat-option value="option2">Tasa Descontada</mat-option>
-
-                </mat-select>
-              </mat-form-field>
-
-
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Capitalización</mat-label>
-                <input matInput placeholder="Dias" >
-              </mat-form-field>
-            </div>
-            <div class="col">
-
-              <mat-form-field>
-                <mat-label>Fecha de Operación</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>DD/MM/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-
+                <mat-form-field class="example-full-width" *ngIf="formIngreso.get('periodo')?.value === 5">
+                  <mat-label>Dias Personalizados</mat-label>
+                  <input matInput placeholder="Dias" formControlName="diasPersonalizados">
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tipo porcentaje tasa</mat-label>
+                  <input matInput placeholder="Tasa %" formControlName="porcentaje_tasa"
+                    (keypress)="onKeyPress($event)">
+                </mat-form-field>
+              </div>
             </div>
           </div>
-        </div>
 
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <mat-form-field>
+                  <mat-label>Tipo de Tasa</mat-label>
+                  <mat-select formControlName="tipo_tasa">
+                    <mat-option *ngFor="let p of tipotasa" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+
+              </div>
+
+              <div class="col" *ngIf="formIngreso.get('tipo_tasa')?.value === 'Tasa Nominal'">
+
+                <mat-form-field class="example-full-width">
+                  <mat-label>Capitalización</mat-label>
+                  <mat-select formControlName="capitalizacion">
+                    <mat-option *ngFor="let p of tipocapitalizacion" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" *ngIf="formIngreso.get('capitalizacion')?.value === 5">
+                  <mat-label>Capitalizacion personalizada</mat-label>
+                  <input matInput placeholder="Dias" formControlName="capitalizacionersonalizada">
+                </mat-form-field>
+              </div>
+
+              <div class="col">
+
+                <mat-form-field>
+                  <mat-label>Fecha de Operación</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="fecha_operacion">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </form>
       </mat-tab>
       <mat-tab label="Retiro">
         <form [formGroup]="formRetiro" class="example-form">
 
-        <div class="container text-center mt-3">
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Monto</mat-label>
-                <input matInput placeholder="Monto S/" >
-              </mat-form-field>
-            </div>
-            <div class="col">
+          <div class="container text-center mt-3">
+            <div class="row">
+              <div class="col">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Monto</mat-label>
+                  <input matInput placeholder="Monto S/" formControlName="monto" (keypress)="onKeyPress($event)">
+                </mat-form-field>
+              </div>
+              <div class="col">
 
-              <mat-form-field>
-                <mat-label>Periodo</mat-label>
-                <mat-select [(value)]="selectedRetiroPeriodo">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Quincenal</mat-option>
-                  <mat-option value="option2">Bimestral</mat-option>
-                  <mat-option value="option3">Trimestral</mat-option>
-                  <mat-option value="option4">Semestral</mat-option>
-                  <mat-option value="option5">Personalizado</mat-option>
-                </mat-select>
-              </mat-form-field>
+                <mat-form-field>
+                  <mat-label>Periodo</mat-label>
+                  <mat-select formControlName="periodo">
+                    <mat-option *ngFor="let p of tipoperiodo" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
 
-              <mat-form-field class="example-full-width" *ngIf="selectedRetiroPeriodo === 'option5'">
-                <mat-label>Dias Personalizados</mat-label>
-                <input matInput placeholder="Dias">
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Tipo porcentaje tasa</mat-label>
-                <input matInput placeholder="Tasa %" >
-              </mat-form-field>
+                <mat-form-field class="example-full-width" *ngIf="formRetiro.get('periodo')?.value === 5">
+                  <mat-label>Dias Personalizados</mat-label>
+                  <input matInput placeholder="Dias" formControlName="diasPersonalizados">
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tipo porcentaje tasa</mat-label>
+                  <input matInput placeholder="Tasa %" formControlName="porcentaje_tasa"
+                    (keypress)="onKeyPress($event)">
+                </mat-form-field>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="container text-center">
-          <div class="row">
-            <div class="col">
-              <mat-form-field>
-                <mat-label>Tipo de Tasa</mat-label>
-                <mat-select [(value)]="selectedRetiroTasa">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Tasa Efectiva</mat-option>
-                  <mat-option value="option2">Tasa Nominal</mat-option>
-                  <mat-option value="option2">Tasa Descontada</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Capitalización</mat-label>
-                <input matInput placeholder="Dias" >
-              </mat-form-field>
-            </div>
-            <div class="col">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <mat-form-field>
+                  <mat-label>Tipo de Tasa</mat-label>
+                  <mat-select formControlName="tipo_tasa">
+                    <mat-option *ngFor="let p of tipotasa" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col" *ngIf="formRetiro.get('tipo_tasa')?.value === 'Tasa Nominal'">
 
-              <mat-form-field>
-                <mat-label>Fecha de Operación</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>DD/MM/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Capitalización</mat-label>
+                  <mat-select formControlName="capitalizacion">
+                    <mat-option *ngFor="let p of tipocapitalizacion" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
 
+                <mat-form-field class="example-full-width" *ngIf="formRetiro.get('capitalizacion')?.value === 5">
+                  <mat-label>Capitalizacion personalizada</mat-label>
+                  <input matInput placeholder="Dias" formControlName="capitalizacionersonalizada">
+                </mat-form-field>
+              </div>
+              <div class="col">
+
+                <mat-form-field appearance="fill" class="example-full-width">
+                  <mat-label>Fecha de Operación</mat-label>
+                  <input matInput [matDatepicker]="picker2" formControlName="fecha_operacion">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </mat-tab>
       <mat-tab label="Libre">
-        <div class="container text-center mt-3">
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Monto</mat-label>
-                <input matInput placeholder="Monto S/" >
-              </mat-form-field>
-            </div>
-            <div class="col">
+        <form [formGroup]="formLibre" class="example-form">
 
-              <mat-form-field>
-                <mat-label>Periodo</mat-label>
-                <mat-select [(value)]="selectedLibrePeriodo">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Quincenal</mat-option>
-                  <mat-option value="option2">Bimestral</mat-option>
-                  <mat-option value="option3">Trimestral</mat-option>
-                  <mat-option value="option4">Semestral</mat-option>
-                  <mat-option value="option5">Personalizado</mat-option>
-                </mat-select>
-              </mat-form-field>
+          <div class="container text-center mt-3">
+            <div class="row">
 
-              <mat-form-field class="example-full-width" *ngIf="selectedLibrePeriodo === 'option5'">
-                <mat-label>Dias Personalizados</mat-label>
-                <input matInput placeholder="Dias">
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Tipo porcentaje tasa</mat-label>
-                <input matInput placeholder="Tasa %" >
-              </mat-form-field>
+              <div class="col">
+
+                <mat-form-field>
+                  <mat-label>Periodo</mat-label>
+                  <mat-select formControlName="periodo">
+                    <mat-option *ngFor="let p of tipoperiodo" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" *ngIf="formLibre.get('periodo')?.value === 5">
+                  <mat-label>Dias Personalizados</mat-label>
+                  <input matInput placeholder="Dias" formControlName="diasPersonalizados">
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Tipo porcentaje tasa</mat-label>
+                  <input matInput placeholder="Tasa %" formControlName="porcentaje_tasa"
+                    (keypress)="onKeyPress($event)">
+                </mat-form-field>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="container text-center">
-          <div class="row">
-            <div class="col">
-              <mat-form-field>
-                <mat-label>Tipo de Tasa</mat-label>
-                <mat-select [(value)]="selectedLibreTasa">
-                  <mat-option>None</mat-option>
-                  <mat-option value="option1">Tasa Efectiva</mat-option>
-                  <mat-option value="option2">Tasa Nominal</mat-option>
-                  <mat-option value="option2">Tasa Descontada</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="example-full-width">
-                <mat-label>Capitalización</mat-label>
-                <input matInput placeholder="Dias" >
-              </mat-form-field>
-            </div>
-            <div class="col">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <mat-form-field>
+                  <mat-label>Tipo de Tasa</mat-label>
+                  <mat-select formControlName="tipo_tasa">
+                    <mat-option *ngFor="let p of tipotasa" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col" *ngIf="formLibre.get('tipo_tasa')?.value === 'Tasa Nominal'">
 
-              <mat-form-field>
-                <mat-label>Fecha de Operación</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>DD/MM/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Capitalización</mat-label>
+                  <mat-select formControlName="capitalizacion">
+                    <mat-option *ngFor="let p of tipocapitalizacion" [value]="p.value">
+                      {{ p.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
 
+                <mat-form-field class="example-full-width" *ngIf="formLibre.get('capitalizacion')?.value === 5">
+                  <mat-label>Capitalizacion personalizada</mat-label>
+                  <input matInput placeholder="Dias" formControlName="capitalizacionersonalizada">
+                </mat-form-field>
+              </div>
+              <div class="col">
+
+                <mat-form-field appearance="fill" class="example-full-width">
+                  <mat-label>Fecha de Operación</mat-label>
+                  <input matInput [matDatepicker]="picker3" formControlName="fecha_operacion">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                  <mat-datepicker #picker3></mat-datepicker>
+                </mat-form-field>
+
+              </div>
             </div>
           </div>
-        </div>
-
+        </form>
       </mat-tab>
     </mat-tab-group>
 
@@ -315,28 +334,29 @@
       <ng-container matColumnDef="accion01">
         <th mat-header-cell *matHeaderCellDef>Acciones</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="warn" [routerLink]="['ediciones', element.id]">
-            Actualizar
-          </button>
+          <div class="row" style="justify-content: space-between;">
+            <button mat-mini-fab color="primary" (click)="init(element.id)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-mini-fab color="warn" (click)="confirm(element.id)">
+              <mat-icon>delete</mat-icon>
+              <!-- Eliminar -->
+            </button>
+          </div>
         </td>
       </ng-container>
 
-
-      <ng-container matColumnDef="accion02">
-        <th mat-header-cell *matHeaderCellDef>Acciones</th>
-        <td mat-cell *matCellDef="let element">
-          <button mat-mini-fab color="warn" aria-label="Example icon button with a home icon"
-            (click)="eliminar(element.id)">
-            <mat-icon>delete</mat-icon>
-            <!--Eliminar-->
-          </button>
-        </td>
-      </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
     </table>
+    <mat-paginator class="mat-elevation-z8" [pageSize]="5" showFirstLastButtons > </mat-paginator>
+
+    <button style="top: 10px;" mat-raised-button color="primary" (click)="gettingAllOperations()" >Calcular </button>
+    <br>
+    <p style="padding-top: 20px;">{{ resultado }}</p>
+
   </div>
 </body>
 
