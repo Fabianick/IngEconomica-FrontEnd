@@ -259,7 +259,7 @@
 
     <br>
 
-    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+    <table id="table" mat-table [dataSource]="datasource" class="mat-elevation-z8">
       <!--- Note that these columns can be defined in any order.
                   The actual rendered columns are set as a property on the row definition" -->
 
@@ -310,7 +310,7 @@
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="capitalizacion">
-        <th mat-header-cell *matHeaderCellDef>capitalizacion</th>
+        <th mat-header-cell *matHeaderCellDef>Capitalizacion</th>
         <td mat-cell *matCellDef="let element">
           {{ element.capitalizacion }}
         </td>
@@ -354,6 +354,8 @@
     <mat-paginator class="mat-elevation-z8" [pageSize]="5" showFirstLastButtons > </mat-paginator>
 
     <button style="top: 10px;" mat-raised-button color="primary" (click)="gettingAllOperations()" >Calcular </button>
+    <button style="top: 10px;" mat-raised-button color="primary" (click)="generarPDF()" >PDF </button>
+
     <br>
     <p style="padding-top: 20px;">{{ resultado }}</p>
 
