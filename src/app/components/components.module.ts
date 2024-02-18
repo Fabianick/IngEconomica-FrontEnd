@@ -59,7 +59,7 @@ import { DialogComponent } from './operation/dialog/dialog.component';
     MatButtonModule,
     MatIconModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 export class ComponentsModule { }
