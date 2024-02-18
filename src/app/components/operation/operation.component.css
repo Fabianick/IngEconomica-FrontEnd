@@ -1,8 +1,7 @@
-.input {
+.input{
   margin-left: 10px;
   width: 90px;
 }
-
 mat-form-field {
   width: 80%;
 }
@@ -10,4 +9,13 @@ mat-form-field {
 .botones button {
   margin-right: 5px;
   margin-left: 5px;
+}
+
+.acciones-container {
+  display: flex;
+  align-items: center;
+}
+
+.acciones-container button {
+  margin-right: 8px; /* Espacio entre los botones */
 }
