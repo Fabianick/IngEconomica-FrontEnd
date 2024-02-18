@@ -6,7 +6,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
-import { Operation } from 'src/app/models/operation';
+import { Operation } from 'src/app/models/operation';;
 import { Users } from 'src/app/models/users';
 import { LoginService } from 'src/app/services/login.service';
 import { OperationService } from 'src/app/services/operation.service';
@@ -93,7 +93,7 @@ export class OperationComponent implements OnInit {
       this.datasource = new MatTableDataSource(data);
       this.datasource.paginator = this.paginator;
     });
-    this.oS.getList().subscribe((data) => {//actualiza la lista si es actualizada o eliminada
+    this.oS.getList().subscribe((data) => {
       this.datasource = new MatTableDataSource(data);
       this.datasource.paginator = this.paginator;
     });
