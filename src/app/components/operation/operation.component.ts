@@ -40,22 +40,25 @@ export class OperationComponent implements OnInit {
 
   auxiliarResultadoPdf:number=0;
   tipoperiodo: { value: number; viewValue: string }[] = [
-    { value: 0, viewValue: 'None' },
     { value: 15, viewValue: 'Quincenal' },
+    { value: 30, viewValue: 'Mensual' },
     { value: 60, viewValue: 'Bimestral' },
     { value: 90, viewValue: 'Trimestral' },
     { value: 120, viewValue: 'Cuatrimestral' },
     { value: 180, viewValue: 'Semestral' },
+    { value: 360, viewValue: 'Anual' },
     { value: 5, viewValue: 'Personalizado' },
   ];
 
   tipocapitalizacion: { value: number; viewValue: string }[] = [
     { value: 1, viewValue: 'None' },
+    { value: 30, viewValue: 'Mensual' },
     { value: 15, viewValue: 'Quincenal' },
     { value: 60, viewValue: 'Bimestral' },
     { value: 90, viewValue: 'Trimestral' },
     { value: 120, viewValue: 'Cuatrimestral' },
     { value: 180, viewValue: 'Semestral' },
+    { value: 360, viewValue: 'Anual' },
     { value: 5, viewValue: 'Personalizado' },
   ];
 
@@ -418,14 +421,13 @@ export class OperationComponent implements OnInit {
       }
     }
     i++;
-
     this.auxiliarResultadoPdf=stock;
     if (i >= size) {
       this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de "+parseFloat(stock.toFixed(2));
     }
     else {
       //return this.calculateStock(i,size,stock,operations);
-      this.calculateStock(i, size, stock, operations);
+      this.calculateStock(i, size, parseFloat(stock.toFixed(2)), operations);
     }
   }
 
