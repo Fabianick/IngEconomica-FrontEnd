@@ -1,4 +1,4 @@
 export const environment={
     production: false,
-    base: "https://bkndingeco.onrender.com"
+    base: "http://localhost:8080"
 }

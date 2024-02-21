@@ -44,6 +44,7 @@ export class OperationComponent implements OnInit {
 
   auxiliarResultadoPdf:number=0;
   tipoperiodo: { value: number; viewValue: string }[] = [
+    { value: 1, viewValue: 'Diario' },
     { value: 15, viewValue: 'Quincenal' },
     { value: 30, viewValue: 'Mensual' },
     { value: 60, viewValue: 'Bimestral' },
