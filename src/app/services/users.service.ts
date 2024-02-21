@@ -32,4 +32,18 @@ export class UsersService {
   getList(){
     return this.listacambio.asObservable();
   }
+
+
+  update(user: string) {
+    let token = sessionStorage.getItem('token');
+
+
+    return this.http.put(`${this.url}/${user}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
 }
+
+

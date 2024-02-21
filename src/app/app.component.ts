@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
-
+import { UsersService } from 'src/app/services/users.service';
+import { OperationService } from './services/operation.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,8 @@ import { LoginService } from './services/login.service';
 export class AppComponent {
   role: string = '';
   title = 'IngEconomica-Frontend';
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService,private uS: UsersService,private op:OperationService) {}
+  username: string = "";
 
 
   cerrar() {
@@ -29,5 +31,13 @@ export class AppComponent {
   }
   mostrarmenu() {
     return window.location.pathname.startsWith('/components');
+  }
+
+  cambioDolar()
+  {
+    this.username = String(sessionStorage.getItem("username"));
+
+    this.uS.update(this.username).subscribe();
+    console.log('cambia');
   }
 }

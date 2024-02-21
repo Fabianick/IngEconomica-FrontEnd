@@ -6,7 +6,7 @@
 
         <div class="sidebar-content">
         <button mat-button routerLink="components/operation"><mat-icon>person</mat-icon>Operaciones</button>
-        <button mat-button [matMenuTriggerFor]="menuSecundario" *ngIf="role == 'ADMIN'" ><mat-icon>face</mat-icon>Secundario</button>
+        <button mat-button (click)="cambioDolar()" ><mat-icon>autorenew</mat-icon>Cambio de Moneda</button>
         <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()"><mat-icon>supervised_user_circle</mat-icon>Usuario</button>
     </div>
 

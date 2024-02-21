@@ -31,7 +31,7 @@ constructor(private loginService: LoginService, private router: Router, private 
     if (request.username && request.username.trim() !== '' && request.password && request.password.trim() !== '') {
       this.loginService.login(request).subscribe((data: any) => {
         sessionStorage.setItem("token", data.jwttoken);
-        this.router.navigate(['components/operation',{username:this.username}]);
+        this.router.navigate(['components/operation']);
         sessionStorage.setItem("username", this.username);
       }, error => {
         this.mensaje = "Credenciales incorrectas!!!"

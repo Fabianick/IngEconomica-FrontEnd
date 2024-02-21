@@ -14,6 +14,7 @@ import { UsersService } from 'src/app/services/users.service';
 import { DialogComponent } from './dialog/dialog.component';
 import jsPDF from 'jspdf'
 import autoTable from 'jspdf-autotable'
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-operation',
@@ -37,6 +38,9 @@ export class OperationComponent implements OnInit {
   codeid: number = 0;
   idguard: number = 0;
   idconfirm: number = 0;
+  items: any[] = []; // Suponiendo que los items son de tipo any
+
+  tipodecambio:number=0;
 
   auxiliarResultadoPdf:number=0;
   tipoperiodo: { value: number; viewValue: string }[] = [
@@ -421,7 +425,25 @@ export class OperationComponent implements OnInit {
 
     this.auxiliarResultadoPdf=stock;
     if (i >= size) {
-      this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de "+parseFloat(stock.toFixed(2));
+
+      this.uS.list().subscribe(
+        (listaItems: any[]) => {
+          this.items = listaItems;
+          console.log(this.items);
+        },
+        error => {
+          console.error('Error al obtener la lista de items:', error);
+        }
+      );
+
+
+      if(this.tipodecambio=1)
+      {
+        this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de S/. "+parseFloat(stock.toFixed(2));
+      }
+      else{
+        this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de $/. "+(parseFloat(stock.toFixed(2))/3.8);
+      }
     }
     else {
       //return this.calculateStock(i,size,stock,operations);
@@ -436,7 +458,6 @@ export class OperationComponent implements OnInit {
     const fecha = new Date();
     this.datasource.paginator = null;
     const totalElementos = this.datasource.data.length;
-    console.log(totalElementos);
 
     const datos = this.datasource.data;
 
@@ -444,8 +465,7 @@ export class OperationComponent implements OnInit {
     this.agregarContenidoPDF(doc, fecha, datos);
 
 
-
-    doc.save('table.pdf')
+    doc.save('Reporte Financiero - '+this.username.toUpperCase()+'.pdf')
 
   }
   agregarContenidoPDF(doc:any, fecha:Date, datos:any) {
