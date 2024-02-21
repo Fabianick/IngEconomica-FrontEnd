@@ -45,6 +45,11 @@ export class OperationService {
         .set('Content-Type', 'application/json'),
     });
   }
+
+
+
+
+
   update(membre: Operation) {
     let token = sessionStorage.getItem('token');
 
@@ -73,5 +78,7 @@ export class OperationService {
         .set('Content-Type', 'application/json'),
     });
   }
+
+
 
 }

@@ -80,7 +80,7 @@ body {
   margin: var(--header-height) 0 0 0;
   background-color: var(--body-color);
   color: var(--text-color);
-  transition: .4s; 
+  transition: .4s;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -137,13 +137,13 @@ body.dark-theme {
     --container-color: hsl(0, 0%, 16%);
   }
 
-/*========== 
-    Color changes in some parts of 
-    the website, in dark theme 
+/*==========
+    Color changes in some parts of
+    the website, in dark theme
 ==========*/
 .dark-theme .scroll-header,
 .dark-theme .nav__menu {
-  box-shadow: 0 2px 4px hsla(210, 40%, 10%, .3); 
+  box-shadow: 0 2px 4px hsla(210, 40%, 10%, .3);
 }
 
 .dark-theme .message__container {
@@ -163,7 +163,7 @@ body.dark-theme {
 }
 
 .dark-theme::-webkit-scrollbar {
-    background: hsl(210, 8%, 30%); 
+    background: hsl(210, 8%, 30%);
   }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -212,7 +212,7 @@ section.message.section.container{
   margin-left: auto;
   margin-right: auto;
 }
-  
+
 .home {
   position: relative;
   overflow: hidden;
@@ -220,7 +220,7 @@ section.message.section.container{
   width: 100%;
   height: 550px;
   background-size: cover;
-} 
+}
 
 #seccion2 {
   position: relative;
@@ -228,12 +228,12 @@ section.message.section.container{
   background-image: url("/assets/img/fondo3.avif");
   width: 100%;
   height: 75%;
-  background-size: cover; 
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: repeat;
   background-position-x: center;
   background-position-y: center;
-} 
+}
 
 .section__title {
   font-size: var(--h2-font-size);
@@ -265,8 +265,8 @@ section.message.section.container{
   align-items: center;
 }
 
-.nav__logo, 
-.nav__close, 
+.nav__logo,
+.nav__close,
 .nav__toggle {
   color: white;/*var(--title-color);*/
 }
@@ -333,6 +333,12 @@ section.message.section.container{
   color: /*var(--title-color)*/white;
   font-weight: var(--font-medium);
   transition: .3s;
+  /*text-align: center;*/
+}
+
+.nav-link:hover{
+  text-align: center;
+  color: var(--first-color);
 }
 
 .nav__link:hover {
@@ -354,12 +360,12 @@ section.message.section.container{
 
 /* Change background header */
 .scroll-header {
-    box-shadow: 0 1px 4px hsla(210, 4%, 15%, .1); 
+    box-shadow: 0 1px 4px hsla(210, 4%, 15%, .1);
   }
 
 /* Active link */
 .active-link {
-  color: var(--first-color);
+  color: white;
 }
 
 /*=============== HOME ===============*/
@@ -391,8 +397,8 @@ section.message.section.container{
   margin-bottom: var(--mb-2-5);
   margin-top: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #fff2f2;
-  text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
+  color: #0dcaf0;
+  text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
 }
 
 /*=============== BUTTONS ===============*/
@@ -661,7 +667,7 @@ span.new__title{
   color: #434343;
 }
 
-.footer__logo, 
+.footer__logo,
 .footer__title {
   margin-bottom: var(--mb-1);
 }
@@ -670,7 +676,7 @@ span.new__title{
   font-size: var(--h3-font-size);
 }
 
-.footer__links, 
+.footer__links,
 .footer__aviables {
   display: flex;
   flex-direction: column;
@@ -699,7 +705,7 @@ span.new__title{
   color: rgb(0 0 0 / 56%);
 }
 
-.footer__img1, 
+.footer__img1,
 .footer__img2 {
   position: absolute;
   width: 100px;
@@ -759,7 +765,7 @@ footer.footer.section {
   }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(210, 32%, 17%); 
+  background: hsl(210, 32%, 17%);
   border-radius: 1rem;
 }
 
@@ -792,10 +798,10 @@ footer.footer.section {
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    color: #fff2f2;
-    text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
+    color: #0dcaf0;
+    text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
   }
-  
+
   .home {
     position: relative;
     overflow: hidden;
@@ -803,7 +809,7 @@ footer.footer.section {
     width: 100%;
     height: 550px;
     background-size: cover;
-  } 
+  }
 
   #seccion2 {
     position: relative;
@@ -811,11 +817,11 @@ footer.footer.section {
     background-image: url("/assets/img/fondo3.avif");
     width: 100%;
     height: 75%;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: center;
-  } 
+  }
 
   .new__container {
     padding-top: 1rem;
@@ -884,7 +890,7 @@ footer.footer.section {
     width: 100%;
     height: 580px;
     background-size: cover;
-  } 
+  }
 
   #seccion2 {
     position: relative;
@@ -892,11 +898,11 @@ footer.footer.section {
     background-image: url("/assets/img/fondo3.avif");
     width: 100%;
     height: 75%;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: center;
-  } 
+  }
 
   .section {
     padding: 2rem 0 2rem;
@@ -912,8 +918,8 @@ footer.footer.section {
     height: calc(var(--header-height) + 1.5rem);
     column-gap: 3rem;
   }
-  .nav__toggle, 
-  .nav__close, 
+  .nav__toggle,
+  .nav__close,
   .nav__img {
     display: none;
   }
@@ -969,7 +975,7 @@ footer.footer.section {
     column-gap: 5rem;
   }
 
-  .celebrate__data, 
+  .celebrate__data,
   .celebrate__title {
     text-align: initial;
   }
@@ -1096,7 +1102,7 @@ footer.footer.section {
   .footer__copy {
     margin-top: 7rem;
   }
-  .footer__img1, 
+  .footer__img1,
   .footer__img2 {
     width: 120px;
   }
@@ -1109,7 +1115,7 @@ footer.footer.section {
     right: 0rem;
     left: auto;
   }
-  
+
   .scrollup {
     right: 3rem;
 
@@ -1122,18 +1128,20 @@ footer.footer.section {
     width: 100%;
     height: 668px;
     background-size: cover;
-  } 
-  
+  }
+
   #seccion2 {
     position: relative;
     overflow: hidden;
     background-image: url("/assets/img/fondo3.avif");
     width: 100%;
     height: 75%;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
     background-position-x: center;
     background-position-y: center;
-  } 
+  }
 }
+
+
 

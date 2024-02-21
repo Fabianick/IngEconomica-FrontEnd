@@ -44,6 +44,20 @@ export class UsersService {
         .set('Content-Type', 'application/json'),
     });
   }
+
+  listbyUsername(user:string)
+  {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Users>(`${this.url}/username/${user}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+
+
 }
 
 

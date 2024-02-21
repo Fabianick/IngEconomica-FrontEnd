@@ -187,6 +187,7 @@ export class OperationComponent implements OnInit {
   }
 
 
+
   aceptar(): void {
     if (this.demo1TabIndex == 0 && this.formIngreso.valid) {
       this.operation.id = this.formIngreso.value.id;
@@ -428,23 +429,17 @@ export class OperationComponent implements OnInit {
     this.auxiliarResultadoPdf=stock;
     if (i >= size) {
 
-      this.uS.list().subscribe(
-        (listaItems: any[]) => {
-          this.items = listaItems;
-          console.log(this.items);
-        },
-        error => {
-          console.error('Error al obtener la lista de items:', error);
-        }
-      );
+      this.uS.listbyUsername(this.username).subscribe((data) =>{
+        this.tipodecambio = data.tipodeCambio;
+        console.log(this.tipodecambio );
+      })
 
-
-      if(this.tipodecambio=1)
+      if(this.tipodecambio ===0)
       {
         this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de S/. "+parseFloat(stock.toFixed(2));
       }
       else{
-        this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de $/. "+(parseFloat(stock.toFixed(2))/3.8);
+        this.resultado = "El monto total acumulado hasta el dia de hoy "+operations[i-1].fecha_operacion+" es de $/. "+(parseFloat(stock.toFixed(2))/3.8).toFixed(2);
       }
     }
     else {
@@ -452,6 +447,10 @@ export class OperationComponent implements OnInit {
       this.calculateStock(i, size, parseFloat(stock.toFixed(2)), operations);
     }
   }
+
+
+
+
 
   generarPDF()
   {
@@ -480,8 +479,13 @@ export class OperationComponent implements OnInit {
     doc.text("Usuario: "+this.username.toUpperCase(),15,30);
     doc.text("Fecha: "+fecha.toLocaleDateString(),15,37);
 
-    doc.text("El resultado de la operación: "+parseFloat(this.auxiliarResultadoPdf.toFixed(2)).toString(),15,45);
-
+    if(this.tipodecambio ===0)
+    {
+      doc.text("El resultado de la operación: S/. "+parseFloat(this.auxiliarResultadoPdf.toFixed(2)).toString(),15,45);
+    }
+    else{
+      doc.text("El resultado de la operación: $/. " + (parseFloat(this.auxiliarResultadoPdf.toFixed(2)) / 3.8).toFixed(2).toString(), 15, 45);
+    }
 
     const columns = [
       { header: '#', dataKey: 'idx' },

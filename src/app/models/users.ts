@@ -3,7 +3,7 @@ export class Users{
     username:String=""
     password:String=""
     enabled:Boolean=false
-    tipodecambio:number=0
+    tipodeCambio:number=0
     nombres: String=""
     apellidos: String=""
 }

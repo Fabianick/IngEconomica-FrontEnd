@@ -47,6 +47,7 @@ export class RegisterMostrarComponent  implements OnInit{
         this.usuario.password = this.claveEncriptada;
         this.usuario.enabled =  true;
         this.usuario.nombres = this.form.value.nombres;
+        this.usuario.tipodeCambio=0;
         const apellP = this.form.value.apellidop;
         const apellM = this.form.value.apellidom;
         const apellidos = `${apellP} ${apellM}`;
