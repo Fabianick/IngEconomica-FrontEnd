@@ -333,6 +333,12 @@ section.message.section.container{
   color: /*var(--title-color)*/white;
   font-weight: var(--font-medium);
   transition: .3s;
+  /*text-align: center;*/
+}
+
+.nav-link:hover{
+  text-align: center;
+  color: var(--first-color);
 }
 
 .nav__link:hover {
@@ -359,7 +365,7 @@ section.message.section.container{
 
 /* Active link */
 .active-link {
-  color: var(--first-color);
+  color: white;
 }
 
 /*=============== HOME ===============*/
@@ -391,8 +397,8 @@ section.message.section.container{
   margin-bottom: var(--mb-2-5);
   margin-top: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #fff2f2;
-  text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
+  color: #0dcaf0;
+  text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
 }
 
 /*=============== BUTTONS ===============*/
@@ -792,8 +798,8 @@ footer.footer.section {
     font-size: medium;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    color: #fff2f2;
-    text-shadow: 2px 1px 0 #2b2b3d, 0 -1px #d09d65;
+    color: #0dcaf0;
+    text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
   }
   
   .home {
