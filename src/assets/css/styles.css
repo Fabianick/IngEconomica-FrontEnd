@@ -397,8 +397,7 @@ section.message.section.container{
   margin-bottom: var(--mb-2-5);
   margin-top: 26px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #0dcaf0;
-  text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
+  color: #000000;
 }
 
 /*=============== BUTTONS ===============*/
@@ -796,10 +795,8 @@ footer.footer.section {
   .home__description {
     padding: 0 8rem;
     font-size: medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
-    color: #0dcaf0;
-    text-shadow: 2px 1px 0 #1e1e1e, 0 -1px #a3988d;
+    color: #000304;
   }
 
   .home {

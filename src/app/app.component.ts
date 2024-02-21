@@ -40,4 +40,15 @@ export class AppComponent {
     this.uS.update(this.username).subscribe();
     console.log('cambia');
   }
+  DescargarPDF(){
+    const pdfUrl = 'assets/pdf/Manual-Del-Usuario (1).pdf';
+
+    // Crea un elemento 'a' para el enlace de descarga
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'WalterDelgadoCV.pdf'; // Nombre que tendrá el archivo descargado
+
+    // Simula un clic en el enlace para iniciar la descarga
+    link.click();
+  }
 }
